@@ -1,0 +1,68 @@
+@import "./mixin";
+
+$color1: white;
+$color2: rgb(46,46,46);
+$color3: rgb(41, 187, 36);
+$color4: #2d2c2e;
+
+
+.heading {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: rgb(85, 85, 85);
+        padding: 3rem 20rem 3rem 20rem;
+        text-align: center;
+    }
+}
+.items {
+      
+      .items {
+        margin-top: 20px;
+      }
+      
+      .items-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .add-more-btn {
+        background-color: #3ee714;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-right: 2rem;
+      }
+      
+      .add-more-btn:hover {
+        background-color: #2d7b1a;
+      }
+      
+    h1 {
+        font-size: 2.5em;
+        font-weight: 300;
+        padding: 1rem 2em 1.5rem 2rem;
+    }
+    .products{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+.footer {
+    margin-top: 2em;
+    background-color: $color2;
+    color: $color1;
+    padding: 20px;
+    text-align: center;
+}

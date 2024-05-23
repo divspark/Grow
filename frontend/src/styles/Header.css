@@ -1,0 +1,144 @@
+
+.header-content {
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    color: black;
+
+    animation: fadeIn 2s;
+  }
+
+
+/* .header-content{
+    position: absolute;
+    display: flex; 
+     flex-direction: column;
+    align-items: start;
+    gap: 15px;
+    max-width: 50%;
+    bottom: 50%;
+    left: 6vw;
+    padding: 15px;
+    margin: 20px; 
+} */
+.header-content.content{
+  width: 50%;
+}
+.header-content p{
+    position: relative;
+    color: rgb(23, 94, 37);
+    text-align: left;
+    font-size: 1.75vw;
+    top: 10vw;
+    left: 50px;
+}
+.header-content h2{
+    position: relative;
+    color: rgb(23, 94, 37);
+    text-align: left;
+    font-size: max(5vw,30px);
+    top: 8vw;
+    left: 50px;
+    
+}
+.search-bar {
+    position: absolute;
+    left: 50px;
+    top: 2.5vw;
+    display: flex;
+    align-items: center;
+    top: 450px;
+
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 10px 20px;
+    border-radius: 28px;
+    border: none;
+    font-size: 1.15vw;
+    flex: 1;
+    background-color: #e9ffe3;
+  }
+  
+  .search-bar button {
+    padding: 10px 20px;
+    border-radius: 28px;
+    border: none;
+    font-size: 1.15vw;
+    background-color: rgb(23, 94, 37);
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .search-bar button:hover {
+    background-color: #0b4e0f;
+  }
+
+@media (max-width:1050px){
+  .header-content{
+    position: relative;
+  }
+  .header-content img{
+    height: 100vh;
+    width: 100vh; 
+  }
+  .header-content.carousel{
+    flex: 1;
+  }
+}
+@media (max-width:750px){
+
+  .header-content p{
+    display: none;
+  }
+  .header-content .search-bar{
+    padding: 0;
+  }
+}
+.header-content.carousel{
+  max-width: 50% ;
+}
+.carousel{
+  position: relative;
+  display: flex;
+  justify-content: right;
+  height: 350px;
+  width: 500px;
+  margin: 50px;
+  margin-left: 300px;
+  margin-top: 120px;
+  padding: auto;
+}
+.carousel img{ 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 1050px) {
+  .carousel {
+      position: relative;
+      justify-content: right;
+      height: 300px;
+      width: 500px;
+      margin: 50px;
+      margin-left: 300px;
+      margin-top: 100px;
+      padding: auto;
+      flex: 0;
+  }
+}
+@media (max-width: 750px) {
+  .carousel {
+      position: relative;
+      justify-content: right;
+      height: 300px;
+      width: 500px;
+      margin: 50px;
+      margin-left: 300px;
+      margin-top: 100px;
+      padding: auto;
+  }
+}

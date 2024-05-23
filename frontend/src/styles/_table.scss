@@ -1,0 +1,65 @@
+.table-container {
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table-title {
+    padding: 10px;
+    font-weight: 400;
+    padding-left: 30px;
+    font-size: 2.5rem;
+    background-color: #f0f0f0;
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+    margin: 0 8rem 0 8rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* 3D shadow effect */
+  transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  /* Style for the table itself */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Style for table headers */
+  .table th {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Style for table cells */
+  .table td {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+  
+  /* Style for alternate rows */
+  .table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Hover effect for rows */
+  .table tr:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Adjust margin as needed */
+  }
+  
+  .table-pagination {
+    /* Additional styles for pagination controls if needed */
+  }
+  
+  .table-pagination button {
+    /* Additional styles for pagination buttons if needed */
+  }
+  

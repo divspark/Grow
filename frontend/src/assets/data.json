@@ -1,0 +1,51 @@
+{
+    "products": [
+      {
+        "price": "40/Kg",
+        "name": "Asparagus",
+        "stock": 5,
+        "photo":"https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_8d89cd38-6e96-4402-864e-55f9fa126b43.jpg"
+      },
+  
+      {
+        "price": "40/Kg",
+        "name": "Asparagus",
+        "stock": 5,
+        "photo":"https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_388ce210-17ad-402c-bc88-a4e245d17591.jpg"
+      },
+      {
+        "price": "40/Kg",
+        "name": "Asparagus",
+        "stock": 5,
+        "photo":"https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_5319d10e-1707-4d6f-9f56-08c84c84e69d.jpg"
+      },
+      {
+        "price": "40/Kg",
+        "name": "Asparagus",
+        "stock": 5,
+        "photo":"https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_30d7ba56-a246-4bc9-bf67-09f9e6cd2141.jpg"
+      },{
+        "price": "40/Kg",
+        "name": "Asparagus",
+        "stock": 5,
+        "photo":"https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_4c6ccaf1-1a39-4050-9730-a338439db23c.png"
+      },{
+        "price": "40/Kg",
+        "name": "Asparagus",
+        "stock": 5,
+        "photo":"https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_c60b2b2f-55ca-4bc7-8268-7f0b3664c422.png"
+      },{
+        "price": "40/Kg",
+        "name": "Asparagus",
+        "stock": 5,
+        "photo":"https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_8d89cd38-6e96-4402-864e-55f9fa126b43.jpg"
+      },
+      {
+        "price": "40/Kg",
+        "name": "Asparagus",
+        "stock": 5,
+        "photo":"https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_8d89cd38-6e96-4402-864e-55f9fa126b43.jpg"
+      }
+    ]
+
+}

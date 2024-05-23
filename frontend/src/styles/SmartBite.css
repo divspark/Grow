@@ -1,0 +1,122 @@
+/* SmartBite Component */
+.advisory-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .advisory {
+    width: 400px;
+    margin-bottom: 20px;
+  }
+  
+  .advisory h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .advisory form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .advisory form div {
+    margin-bottom: 15px;
+  }
+  
+  .advisory form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .advisory form input,
+  .advisory form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .advisory form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .advisory form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* RecipeList Component */
+  .recipe-list {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .recipe-list h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .recipecard_list {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+  }
+  
+  /* RecipeCard Component */
+  .recipe-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image-container {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .recipe-details {
+    text-align: center;
+  }
+  
+  .recipe-details h2 {
+    margin-bottom: 10px;
+  }
+  
+  .recipe-details a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .recipe-details a:hover {
+    color: #0056b3;
+  }
+  
+  .recipe-details p {
+    margin-bottom: 5px;
+  }
+  

@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=Homemade+Apple&family=Major+Mono+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.img_advise {
+  background-image: url('../assets/image.png');
+  background-position: center;
+  margin: 1rem;
+  margin-top: 5rem;
+  margin-bottom: 0.5rem;
+  height: 30vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+
+.section__padding {
+  padding: 1rem 1rem;
+}
+.footer {
+  background-color: rgb(58, 57, 57);
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.sb__footer {
+  display: flex;
+  flex-direction: column;
+}
+.sb__footer-links {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  /* width: 100vh; */
+  text-align: left;
+}
+.sb__footerlink_div {
+  padding: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  flex-direction: column;
+  color: white;
+  /* flex: 0 0 auto; */
+  width: 22%;
+}
+.sb__footerlink_div1 {
+  padding: 1.5rem;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  flex-direction: column;
+  color: white;
+  /* flex: 0 0 auto; */
+  width: 22%;
+}
+.sb__footerlink_div img {
+  height: 8vw;
+  width: 12vw;
+}
+.a {
+  color: rgb(175, 175, 175);
+  text-decoration: none;
+}
+.sb__footer-social h3 {
+  color: white;
+  font-size: 1.5vw;
+}
+.social_media {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  /* padding: 1rem; */
+}
+.social_media p {
+  display: flex;
+  width: 80%;
+  color: white;
+  gap: 1vw;
+  cursor: pointer;
+}
+.social_media p:hover {
+  color: #c0c0c0;
+}
+.sb__footerlink_div h3 {
+  font-size: 25px;
+  line-height: 17px;
+  margin-bottom: 0.9rem;
+  color: rgb(187, 187, 187);
+  text-decoration: underline;
+}
+.sb__footerlink_div1 h3 {
+  font-size: 25px;
+  line-height: 22px;
+  margin-bottom: 0.9rem;
+  color: rgb(187, 187, 187);
+  text-decoration: underline;
+}
+.sb__footerlink_div p {
+  font-size: 17px;
+  line-height: 15px;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+.sb__footerlink_div1 p {
+  font-size: 17px;
+  line-height: 20px;
+  margin: 1rem 0;
+}
+.sb__footerlink_div p:hover {
+  color: #c0c0c0;
+}
+.sb__footer-below {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.2rem;
+}
+hr {
+  color: white !important;
+  width: 100%;
+  height: 10px;
+}
+.sb__footer-copyright p {
+  font-size: 17px;
+  line-height: 12px;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+}
+@media screen and (max-width: 1050px) {
+  .sb__footerlink_div1 {
+    width: 33%;
+  }
+  .sb__footerlink_div {
+    width: 33%;
+  }
+  /* .about-content{
+
+  } */
+}
+@media screen and (max-width: 850px) {
+  .sb__footer-heading h3 {
+    font-size: 44px;
+    line-height: 42px;
+  }
+  .sb__footer-below h3 {
+    font-size: 15px;
+  }
+  .sb__footerlink_div1 {
+    width: 50%;
+  }
+  .sb__footerlink_div {
+    width: 50%;
+  }
+  
+}
+@media screen and (max-width: 550px) {
+  .sb__footer-heading h3 {
+    font-size: 34px;
+    line-height: 42px;
+  }
+  .sb__footerlink_div {
+    margin: 1rem 0;
+  }
+  .sb__footer-below {
+    flex-direction: column;
+    justify-content: left;
+  }
+  .sb__footer-below h3 {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .sb__footer-heading h3 {
+    font-size: 27px;
+    line-height: 38px;
+  }
+  .sb__footer-below h3 {
+    font-size: 20px;
+  }
+}
+
+/* aboutsection */
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+.about{
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Reddit Sans", sans-serif; 
+}
+.abimg{
+  width: 100%;
+  margin: 20px;
+  padding: 20px;
+}
+.abimg img{
+  height: 450px;
+  width: 650px;
+}
+.about-content{
+  height: 500px;
+  margin: 80px;
+  padding: 70px;
+}
+.about-content h3{
+  margin-top: 55px;
+  font-size: 1vw;
+  font-weight: 200;
+
+}
+.about-content h2{
+  margin-top: 50px;
+  font-size: 3.5vw;
+  font-weight: 600;
+  color: #88b121;
+  line-height: 2.5vw;
+}
+.about-content p{
+  margin-top: 22px;
+  font-weight: 300;
+}
+.about-content button{
+  height: 50px;
+  padding: 10px 25px;
+  margin-top:30px;
+  background-color: white;
+  border: 1.5px solid #88b121;
+  border-radius: 8px;
+  color: #88b121;
+}
+.about-content button:hover{
+  background-color: #88b121;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+@media screen and (max-width: 1250px){
+  .about-content{
+    margin: 50px;
+    padding: 30px;
+    margin-left: 10px;
+  }
+  
+  .about-content p{
+    font-size: 15px;
+  }
+  .abimg{
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    
+  }
+  .abimg img{
+    height: 430px;
+    width: 630px;
+  }
+}
+@media screen and (max-width: 1050px){
+  .about{
+    flex-direction: column;
+  }
+  .about-content{
+    height: 400px;
+    margin: 0 50px 0 ;
+    padding: 0 30px 0;
+  }
+  .about-content h3{
+    font-size: 15px;
+  }
+  .about-content h2{
+    font-size: 60px;
+  }
+  .about-content p{
+    font-size: 17px;
+  }
+  .abimg{
+    width: 100%;
+    height: 450px;
+    margin: 10px 50px 0 50px;
+    padding: 10px 100px 0 70px;
+  }
+  .abimg img{
+    height: 400px;
+    width: 600px;
+  }
+}
+@media screen and (max-width: 712px){
+  
+  .abimg{
+    width: 100%;
+    margin: 5vw;
+    padding: 5vw ;
+    margin-bottom: 0px;
+  }
+  .abimg img{
+    height: 400px;
+    width: 550px;
+  }
+}
+@media screen and (max-width: 435px){
+  .about-content{
+    height: 400px;
+    margin: 0 30px 0 20px;
+    padding: 0 10px 0 7px;
+  }
+  .about-content h3{
+    margin-top: 0;
+  }
+  .about-content h2{
+    text-wrap: wrap;
+  }
+  .abimg img{
+    height: 300px;
+    width: 350px;
+  }
+  
+}
+.carousel2{
+  margin: 50px;
+  margin-bottom: 100px;
+  font-family: "Reddit Sans", sans-serif; 
+}
+.carousel2 h2{
+  text-align: center;
+  justify-content: center;
+  text-decoration: underline;
+  font-size: 3vw;
+  font-weight: 800;
+  color: #296804;
+}
+.carousel2 p{
+  text-align: center;
+  justify-content: center;
+  font-size: 1.3vw;
+  font-weight: 300;
+  color: rgb(23, 94, 37);
+}
+.carousel2-root {
+  width: 64% !important;
+  margin: auto !important;
+  margin-top: 5% !important;
+  height: 100vh;
+}
+
+.carousel2 .slide {
+  background: #fff !important;
+  color: black;
+  height: 100%;
+  box-shadow: 5px solid black;
+}
+
+.carousel2 .slide img {
+  height: 125px;
+  width: 139px !important;
+  border-radius: 50%;
+}
+
+.myCarousel {
+  background: #f0efef;
+  margin-top: -6%;
+  width: 54%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 6%;
+  padding-bottom: 8%;
+  padding-left: 5%;
+  padding-right: 5%;
+  border: 2px solid #ffffff;
+  height: 286px;
+}
+
+.carousel2 .control-dots {
+  padding-left: 5px !important;
+  outline: 0;
+  bottom: 5% !important;
+}
+
+.myCarousel h3 {
+  color: rgb(18, 63, 11);
+  font-weight: 100;
+  letter-spacing: 0.2px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+
+.myCarousel h4 {
+  text-transform: uppercase;
+  margin-top: 0;
+  padding-top: 0;
+  font-weight: 500;
+  color: #88b121;
+  font-size: 14px;
+}
+
+.myCarousel p {
+  font-weight: 100 !important;
+  line-height: 29px !important;
+  color: #222;
+  font-size: 15px;
+  font-family: sans-serif;
+  max-height: 67px;
+}
+
+.myCarousel p:before {
+  content: "“";
+  color: #aaa;
+  font-size: 26px;
+  font-family: monospace;
+  font-weight: 100;
+}
+
+.myCarousel p:after {
+  content: "”";
+  color: #aaa;
+  font-size: 26px;
+  font-family: monospace;
+  font-weight: 100;
+  line-height: 0;
+}
+
+.carousel2 .control-dots .dot {
+  box-shadow: none !important;
+  background: #296804!important;
+  outline: 0;
+}
+
+.carousel2.carousel2-slider .control-arrow {
+  background: #000 !important;
+  height: 50px !important;
+  position: absolute;
+  top: 35% !important;
+}
+
+/* .App {
+  text-align: center;
+} */
+
+@media only screen and (max-width: 934px) {
+  .carousel2-root {
+    outline: 0;
+    width: 93% !important;
+    margin: auto !important;
+  }
+
+  .carousel2.carousel2-slider .control-arrow {
+    display: 1px black !important;
+  }
+  .myCarousel {
+    background: #fafafa;
+    margin-top: -9%;
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 8%;
+    padding-bottom: 12.5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border: 1px solid #ddd;
+    height: 269px;
+  }
+
+  .carousel2 .slide img {
+    width: 24% !important;
+    border-radius: 50%;
+  }
+}
+.features{
+  position: relative;
+  display: flex;
+  margin: 60px;
+  margin-top: 0%;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.feature-box {
+    margin: 60px;
+    height: 300px;
+    margin-left: 22px;
+    width: 15rem;
+    color: black;
+    background-color: #83b5047b;
+    padding: 50px 30px 50px 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 2s;
+}
+.feature-box p{
+  padding: 20px;
+}
+.feature-box .icon{
+  font-size: 50px;
+  padding: 0 0 30px 0;
+  justify-content: space-between;
+}
+.bestseller-page {
+  max-width: 100%;
+  margin: 40px auto;
+  padding: 50px;
+  
+}
+.bestseller-page h1 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 1.3em;
+  font-weight: 400;
+  color: #88b121;
+}
+.best-seller_content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 50px;
+  font-weight: 800;
+  color: #1c4106;
+  font-family: "Reddit Sans", sans-serif; 
+}
+.best-seller_content p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #2f6d0b;
+  font-family: "Reddit Sans", sans-serif; 
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1.5fr));
+  gap: 10px;
+}

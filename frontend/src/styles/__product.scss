@@ -1,0 +1,72 @@
+.product-card {
+    width: 18.75rem; /* 300px */
+    height: auto;
+    padding: 1rem;
+    flex: none;
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    position: relative;
+    background-color: $color1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    &:hover > .svg {
+      opacity: 1;
+    }
+  
+    .image-container {
+      width: 100%;
+      padding-bottom: 125%; /* 4:5 aspect ratio */
+      position: relative;
+      overflow: hidden;
+    }
+  
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure the image covers the container */
+      transition: transform 0.3s ease; /* Smooth transition for zoom */
+    }
+
+  
+    span {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+  
+    .svg {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #0000006b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 100%;
+        border: none;
+        background-color: $color3;
+        cursor: pointer;
+        color: $color1;
+        font-size: 0.8rem;
+        transition: all 0.3s;
+        &:hover {
+          transform: rotate(20deg);
+        }
+      }
+    }
+  }
+  

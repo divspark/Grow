@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=Homemade+Apple&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* AutomatedSlider.css */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* or whatever height you need */
+    overflow: hidden;
+  }
+  
+  .slider-image {
+    width: 100%;
+    height: 100vh; /* or whatever height you need */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .centered-text {
+    text-align: center;
+    font-family: "Homemade Apple", cursive;
+    color: white; /* Adjust text color */
+    font-size: 4.6em; /* Adjust font size */
+
+    p {
+        padding-top: 20px;
+        font-size: 1.7rem;
+    }
+  }
