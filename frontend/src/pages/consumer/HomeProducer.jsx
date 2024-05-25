@@ -118,7 +118,7 @@ const HomeProducer = () => {
         showThumbs={false}
         showStatus={false}
         autoPlay={true}
-        interval={6100}
+        interval={50}
       >
         {testimonials.map((testimonial, index) => (
           <div key={index}>
