@@ -8,7 +8,7 @@ const Product = () => {
   const addToCart = useStore((state) => state.addToCart);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/v1/product/admin-products") // Replace with your backend endpoint
+    axios.get("http://localhost:5000/api/v1/product/admin-products") // Replace with your backend endpoint
       .then(response => {
         setProducts(response.data);
       })

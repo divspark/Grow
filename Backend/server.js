@@ -50,7 +50,7 @@ const parseInput = (input) => {
 
 const getProductData = async (productName) => {
   try {
-    const response = await axios.get(`http://localhost:3000/api/v1/product/${productName}`);
+    const response = await axios.get(`http://localhost:5000/api/v1/product/${productName}`);
     return response.data;
   } catch (error) {
     console.error('Error fetching product data:', error);

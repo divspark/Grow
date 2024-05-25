@@ -18,15 +18,43 @@ const upload = multer({
   }).single("file");
 
 
-export const uploadPhoto = (req, res) => {
+// export const uploadPhoto = (req, res) => {
+//     upload(req, res, (err) => {
+//       if (err) {
+//         console.error("Error uploading file:", err);
+//         return res.status(500).json({ error: "Failed to upload file" });
+//       }
+  
+//       // File uploaded successfully, return the file path
+//       const filePath = req.file.path;
+//       res.json({ filePath: filePath });
+//     });
+//   }
+
+
+  export const uploadPhoto =  (req, res) => {
     upload(req, res, (err) => {
       if (err) {
-        console.error("Error uploading file:", err);
-        return res.status(500).json({ error: "Failed to upload file" });
+        res.status(400).json({ message: err });
+      } else {
+        if (req.file === undefined) {
+          res.status(400).json({ message: 'No file selected' });
+        } else {
+          const filePath = path.join('uploads', req.file.filename).replace(/\\/g, '/');
+          res.status(200).json({ file: filePath });
+        }
       }
-  
-      // File uploaded successfully, return the file path
-      const filePath = req.file.path;
-      res.json({ filePath: filePath });
     });
+  }
+
+  function checkFileType(file, cb) {
+    const filetypes = /jpeg|jpg|png|gif/;
+    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+    const mimetype = filetypes.test(file.mimetype);
+  
+    if (mimetype && extname) {
+      return cb(null, true);
+    } else {
+      cb('Error: Images Only!');
+    }
   }

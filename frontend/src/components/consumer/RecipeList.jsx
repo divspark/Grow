@@ -9,7 +9,7 @@ const RecipeList = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/v1/recipe/recipes?q=onion');
+        const response = await axios.get('http://localhost:5000/api/v1/recipe/recipes?q=onion');
         setRecipes(response.data|| []); // Ensure recipes is an array
       } catch (err) {
         setError('Failed to fetch recipes');
