@@ -124,7 +124,7 @@ const upload = multer({
   //   });
   // }
 
-  export const uploadPhoto =  (req, res) => {
+  export const uploadPhoto =  (req, res,next) => {
     upload(req, res, (err) => {
       if (err) {
         res.status(400).json({ message: err });
@@ -133,7 +133,9 @@ const upload = multer({
           res.status(400).json({ message: 'No file selected' });
         } else {
           const filePath = path.join('uploads', req.file.filename).replace(/\\/g, '/');
-          res.status(200).json({ file: filePath });
+          // res.status(200).json({ file: filePath });
+          req.filePath = filePath; // Attach the file path to the request object
+        next();
         }
       }
     });

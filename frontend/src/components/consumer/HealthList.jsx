@@ -1,5 +1,5 @@
 import React from 'react'
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard';
 import axios from 'axios';
 

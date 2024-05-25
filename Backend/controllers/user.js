@@ -4,10 +4,11 @@ import User from "../models/userModel.js";
 const secretKey = "Dabbemein4098";
 
 export const HandleUserLogin = async (req, res) => {
-  const { email, password, role,district,state } = req.body;
+  // const { email, password, role,district,state } = req.body;
+  const { email, password, role,district } = req.body;
 
   // Check if user exists with provided email, password, and role
-  const user = await User.findOne({ email, password, role,district,state });
+  const user = await User.findOne({ email, password, role,district });
   if (!user) {
     return res.status(401).json({ message: "Invalid Email, Password, or User Role" });
   }
@@ -29,8 +30,9 @@ export const HandleUserLogin = async (req, res) => {
       res.send('Welcome to Consumer Dashboard');
       // res.redirect(`http://localhost:3001/`);
     } else if (decoded.role === 'producer') {
-      res.send('Welcome to Producer Dashboard'+`${district}`).json(decoded.district);
-      // res.redirect(`http://localhost:3001/producer/:${decoded.id}`);
+      res.send('Welcome to Producer Dashboard'+`${district}`);
+       //res.redirect(`http://localhost:3000/producer/:${decoded.id}`);
+      
     } else {
       res.status(403).send('Access denied.');
     }
