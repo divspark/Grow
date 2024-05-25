@@ -11,10 +11,10 @@ const Header = () => {
             </div>
             <div className="navbar__menu">
                 <a href="/producer/additems" className="navbar__item">
-                    My Items
+                    Add Items
                 </a>
                 <a href="/signup" className="navbar__item">
-                    Sign Up
+                    Sign Up/Log in
                 </a>
             </div>
                 <img src={centerImage} alt="Center" className="navbar__center-image" />  
