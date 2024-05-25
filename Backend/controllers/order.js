@@ -1,4 +1,5 @@
 import Order from "../models/order.js";
+import jwt from "jsonwebtoken";
 
 //Api-for creating new orders
 export const newOrder = async (req, res) => {
@@ -48,7 +49,17 @@ export const updateOrder = async (req, res) => {
 
   export const fetchOrder = async (req, res) => {
     try {
-      // Extract user ID from JWT token
+
+      const token = req.cookies.token;
+
+    if (!token) {
+      throw new Error('Authentication token is missing');
+    }
+
+    // Verify the token and extract user ID
+    const decoded = jwt.verify(token, 'Dabbemein4098'); // Use the correct secret key from environment variables
+    req.user = { id: decoded.id };
+      // Fetch user ID from the request object (set by middleware)
       const userId = req.user.id;
   
       // Fetch orders associated with the user ID
@@ -59,4 +70,4 @@ export const updateOrder = async (req, res) => {
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
-  }
+  };

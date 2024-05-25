@@ -20,6 +20,8 @@ function Signup() {
         email,
         password,
         role,
+        district,
+        state
       });
 
       // Handle successful signup
