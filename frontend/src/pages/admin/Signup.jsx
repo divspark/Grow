@@ -7,6 +7,8 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
+  const[state, setState] = useState("Uttar Pradesh");
+  const[district, setDistrict] = useState("Raebareli");
   //const [error, setError] = useState("");
 
   const handleSignup = async (event) => {
@@ -14,7 +16,7 @@ function Signup() {
     //setError("");
 
     try {
-      const response = await axios.post("http://localhost:3000/api/v1/user/signup", {
+      const response = await axios.post("http://localhost:5000/api/v1/user/signup", {
         email,
         password,
         role,
@@ -80,6 +82,32 @@ function Signup() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
+
+              <div className="input-group mb-3">
+        <span className="input-group-text">
+          <i className="bx bx-map"></i>
+        </span>
+        <input
+          type="text"
+          className="form-control form-control-lg fs-6"
+          placeholder="District"
+          value={district}
+          onChange={(e) => setDistrict(e.target.value)}
+        />
+      </div>
+
+      <div className="input-group mb-3">
+        <span className="input-group-text">
+          <i className="bx bx-map-pin"></i>
+        </span>
+        <input
+          type="text"
+          className="form-control form-control-lg fs-6"
+          placeholder="State"
+          value={state}
+          onChange={(e) => setState(e.target.value)}
+        />
+      </div>
 
               <div className="input-group mb-3">
                 <span className="input-group-text">

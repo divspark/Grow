@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlineSortAscending, AiOutlineSortDescending } from "react-icons/ai";
-import { Column, usePagination, useSortBy, useTable } from "react-table";
+import { usePagination, useSortBy, useTable } from "react-table";
 
 function TableHOC(columns, data, containerClassname, heading, showPagination = false) {
   return function HOC() {

@@ -20,7 +20,8 @@ import SmartBite from './pages/consumer/SmartBite.jsx';
 import SpeechRecogination from './components/Features/SpeechRecogination.jsx';
 import AddItem from './pages/producer/AddItem.jsx';
 import Search from './pages/consumer/Search.jsx';
-import FeedbackForm from './pages/consumer/FeedbackForm.jsx';
+//import FeedbackForm from './pages/consumer/FeedbackForm.jsx';
+import { ContactUs } from './pages/consumer/Contact.jsx';
 //import UploadImage from './components/Features/CameraRecogination.jsx';
 
 
@@ -52,7 +53,7 @@ const App = () => {
             <Route path="/payment" element={<Payment />} />
             <Route path='/smartbite' element={<SmartBite />} />
             <Route path='/search' element={<Search />} />
-            <Route path='/contact' element={<FeedbackForm />} />
+            <Route path='/contact' element={<ContactUs />} />
 
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />

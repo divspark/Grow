@@ -22,7 +22,10 @@ const productSchema = new Schema({
       type: String,
     //   required: [true, "Please Enter Product category"],
       trim: true,
-  }
+  },
+  district: {
+      type: String,
+  },
 }, {
   timestamps: true,
 });

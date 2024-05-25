@@ -7,15 +7,15 @@ import data from '../../assets/data.json';
 const Home = () => {
   const navigate = useNavigate(); // Initialize useNavigate
 
-  let menuItems = [
-    {
-      text: 'Options',
-      items: [
-        { text: 'Only Audio' },
-        { text: 'Basic' }
-      ]
-    }
-  ];
+  // let menuItems = [
+  //   {
+  //     text: 'Options',
+  //     items: [
+  //       { text: 'Only Audio' },
+  //       { text: 'Basic' }
+  //     ]
+  //   }
+  // ];
 
   const handleAddMore = () => {
     // Navigate to the desired route when "Add More" button is clicked

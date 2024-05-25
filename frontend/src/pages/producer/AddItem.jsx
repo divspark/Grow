@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SpeechRecogination from '../../components/Features/SpeechRecogination';
 import CameraRecogination from '../../components/Features/CameraRecogination';
-import Basic from '../../components/Features/Basic';
+//import Basic from '../../components/Features/Basic';
 import BasicInput from '../../components/Features/BasicInput';
 
 const AddItem = () => {

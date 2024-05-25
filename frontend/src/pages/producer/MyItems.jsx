@@ -23,7 +23,8 @@ const MyItems = () => {
   );
 
   // Define your table data
-  const tableData = React.useMemo(() => data.products, [data]);
+  // const tableData = React.useMemo(() => data.products, [data]);
+  const tableData = React.useMemo(() => data.products, []);
 
   const GeneratedTable = TableHOC(columns, tableData, "table-container", "", true);
 
