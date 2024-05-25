@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard';
 import axios from 'axios';
 
-const RecipeList = ({ query }) => {
+const Calories = ({ query }) => {
   const [recipes, setRecipes] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/v1/recipe/recipes?q=${query}`);
+        const response = await axios.get(`http://localhost:3000/api/v1/recipe/recipes?calories=${query}`);
         setRecipes(response.data || []); // Ensure recipes is an array
       } catch (err) {
         setError('Failed to fetch recipes');
@@ -41,7 +41,7 @@ const RecipeList = ({ query }) => {
   );
 };
 
-export default RecipeList;
+export default Calories;
 
 // import React, { useEffect, useState } from 'react';
 // import axios from 'axios';

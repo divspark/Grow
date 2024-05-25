@@ -5,10 +5,12 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
+    height: auto;
   }
   
   .advisory {
-    width: 400px;
+    width: auto;
+    height: auto;
     margin-bottom: 20px;
   }
   

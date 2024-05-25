@@ -1,20 +1,21 @@
 import React from 'react';
 
-const RecipeCard = ({ name, image, url, ingredients, calories }) => {
-  return (
-    <div className="recipe-card">
-      <div className="image-container">
-        <img src={image} alt={name} />
-      </div>
-      <div className="recipe-details">
-        <h2>{name}</h2>
-        <a href={url} target="_blank" rel="noopener noreferrer">View Recipe</a>
-        <p>Ingredients: {ingredients.join(', ')}</p>
-        {/* <p>Nutrients: {nutrients}</p> */}
-        <p>Calories: {calories}</p>
-      </div>
-    </div>
-  );
+const RecipeCard = ({ recipe }) => {
+    return (
+        <div className='recipe-card'>
+            
+            <img src={recipe.image} alt={recipe.label} />
+            <h2 className='recipe-name'>{recipe.name}</h2>
+            <ul>
+                {recipe.ingredientLines && Array.isArray(recipe.ingredientLines) && // Check if ingredientLines is defined and is an array
+                    recipe.ingredientLines.map((ingredient, index) => (
+                        <li key={index}>{ingredient}</li>
+                    ))}
+            </ul>
+            <p>Calories: {Math.round(recipe.calories)}</p>
+            <a href={recipe.url} target="_blank" rel="noopener noreferrer">View Recipe</a>
+        </div>
+    );
 };
 
 export default RecipeCard;
