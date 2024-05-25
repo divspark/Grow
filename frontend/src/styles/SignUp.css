@@ -8,7 +8,10 @@ body {
 }
 
 .col-lg-6{
-    background-color: #E16120;
+    background: linear-gradient( to right,
+        rgba(254, 197, 7, 1),
+        rgb(234, 120, 21)
+      );
 }
 
 .col{
