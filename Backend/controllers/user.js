@@ -150,7 +150,7 @@ export const GetAllUser = async (req, res) => {
 // };
 
 export const deleteUserByEmail = async (req, res) => {
-  const { email } = req.body;
+  const { email } = req.params;
 
   try {
     const user = await User.findOneAndDelete({ email });
