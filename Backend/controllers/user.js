@@ -33,6 +33,11 @@ export const HandleUserLogin = async (req, res) => {
       res.send('Welcome to Producer Dashboard'+`${district}`);
        //res.redirect(`http://localhost:3000/producer/:${decoded.id}`);
       
+    }
+    else if (decoded.role === 'admin') {
+      res.send('Welcome to Admin Dashboard');
+       //res.redirect(`http://localhost:3000/producer/:${decoded.id}`);
+      
     } else {
       res.status(403).send('Access denied.');
     }

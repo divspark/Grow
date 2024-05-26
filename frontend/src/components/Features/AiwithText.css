@@ -18,7 +18,11 @@
     margin: 30px 20px 0 20px;
   }
   
+<<<<<<< HEAD
 .ai-btn {
+=======
+  .ai_btn {
+>>>>>>> 0a89c3396c2f052bd03bf7cf37e09df0df8f062c
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
@@ -28,7 +32,7 @@
     margin: 30px 20px 0 0;
   }
   
-  .ai-btn:hover {
+  .ai_btn:hover {
     background-color: #0056b3;
   }
   
