@@ -7,6 +7,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
   const [password, setPassword] = useState("");
+  const [district, setDistrict] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = async (event) => {
@@ -18,6 +19,7 @@ function Login() {
         email,
         password,
         role,
+        district
       });
 
       // Handle successful login
@@ -119,6 +121,20 @@ function Login() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
+
+              <div className="input-group mb-3">
+  <span className="input-group-text">
+    <i className="bx bx-map"></i>
+  </span>
+  <input
+    type="text"
+    className="form-control form-control-lg fs-6"
+    placeholder="District"
+    name="district"
+    value={district}
+    onChange={(e) => setDistrict(e.target.value)}
+  />
+</div>
               {error && <div className="alert alert-danger">{error}</div>}
               <button
                 type="submit"

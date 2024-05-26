@@ -23,6 +23,7 @@ import Search from './pages/consumer/Search.jsx';
 import { ContactUs } from './pages/consumer/Contact.jsx';
 //import UploadImage from './components/Features/CameraRecogination.jsx';
 import ConditionalNavbar from './components/consumer/ConditionalNavbar.jsx';
+import AiwithText from './components/Features/AiwithText.jsx';
 
 library.add(fas, faTwitter, faFontAwesome);
 
@@ -32,10 +33,10 @@ const App = () => {
       <ConditionalNavbar />
       <Routes>
         {/* Producer */}
-        <Route exact path="/producer/:id" element={<Home />} />
-        <Route path="/producer/:id/product" element={<Product />} />
-        <Route path="/producer/:id/cart" element={<Cart />} />
-        <Route path="/producer/:id/checkout" element={<Checkout />} />
+        <Route exact path="/producer" element={<Home />} />
+        <Route path="/producer/product" element={<Product />} />
+        <Route path="/producer/cart" element={<Cart />} />
+        <Route path="/producer/checkout" element={<Checkout />} />
         <Route path="/producer/additems" element={<AddItem />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -52,6 +53,7 @@ const App = () => {
         <Route path='/smartbite' element={<SmartBite />} />
         <Route path='/search' element={<Search />} />
         <Route path='/contact' element={<ContactUs />} />
+        <Route path='/gemini' element={<AiwithText />} />
         
         {/* <Route path="/image" element={<UploadImage />} /> */}
       </Routes>

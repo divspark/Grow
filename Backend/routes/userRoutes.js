@@ -1,5 +1,5 @@
 import express from "express";
-import { HandleUserLogin, HandleUserSignup } from "../controllers/user.js";
+import { GetAllUser, HandleUserLogin, HandleUserSignup, deleteUserByEmail } from "../controllers/user.js";
 import cookieParser from "cookie-parser";
 
 const app = express.Router();
@@ -9,6 +9,8 @@ app.use(cookieParser());
 
 app.post("/login", HandleUserLogin);
 app.post("/signup", HandleUserSignup);
+app.get("/all", GetAllUser);
+app.delete("/delete", deleteUserByEmail);
 
 // app.get("/login", (req, res) => {
 //     res.sendFile(

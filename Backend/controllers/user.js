@@ -121,3 +121,44 @@ export const HandleUserSignup = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+
+export const GetAllUser = async (req, res) => {
+  try {
+    const users = await User.find({});
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// export const getAdminProducts = async (req, res, next) => {
+//   try {
+//     const products = await Product.find({});
+//     // Assuming each product has an image field that contains the filename
+//     // const updatedProducts = products.map(product => {
+//     //   return {
+//     //     ...product._doc, // Spread the original product object
+//     //     photo: ` http://localhost:5000/${product.photoPath}` // Append image URL
+//     //   };
+//     // });
+
+//     return res.status(200).json(products);
+//   } catch (error) {
+//     return res.status(500).json({ error: 'Failed to fetch products' });
+//   }
+// };
+
+export const deleteUserByEmail = async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    const user = await User.findOneAndDelete({ email });
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.json({ message: 'User deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
