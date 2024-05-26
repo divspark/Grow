@@ -118,7 +118,21 @@ const HomeProducer = () => {
         showThumbs={false}
         showStatus={false}
         autoPlay={true}
-        interval={50}
+        interval={2000}
+        renderArrowPrev={(clickHandler, hasPrev, labelPrev) =>
+          hasPrev && (
+              <button type="button" style={{display:"none"}} onClick={clickHandler()} className="arrow arrow-prev">
+                  &#9664;
+              </button>
+          )
+      }
+      renderArrowNext={(clickHandler, hasNext, labelNext) =>
+          hasNext && (
+              <button type="button" style={{display:"none"}} onClick={clickHandler} className="arrow arrow-next">
+                  &#9654;
+              </button>
+          )
+      }
       >
         {testimonials.map((testimonial, index) => (
           <div key={index}>

@@ -16,11 +16,11 @@ const AutomatedSlider = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 2500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 2500,
     arrows: false,
     fade: true,
   };
@@ -32,7 +32,7 @@ const AutomatedSlider = () => {
           <div key={index}>
             <div
               className="slider-image"
-              style={{  backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(${img})`, }}
+              style={{  backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url(${img})`, }}
             >
                 <div className="centered-text">fresh ,savor ,bitesy
                 <p>Let food be thy medicine and medicine be thy food.</p></div>

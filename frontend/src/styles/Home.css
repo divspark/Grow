@@ -58,6 +58,10 @@
   /* flex: 0 0 auto; */
   width: 22%;
 }
+.sb__footerlink_div a{
+  text-decoration: none;
+  color: white;
+}
 .sb__footerlink_div img {
   height: 8vw;
   width: 12vw;

@@ -12,6 +12,7 @@ import paymentRoutes from "./routes/paymentRoutes.js";
 import RecipeRoutes from "./routes/RecipeRoutes.js";
 import RecognizeRoutes from "./routes/RecognizeRoute.js";
 import uploadRoutes from "./routes/UploadRoute.js";
+import speechRoutes from "./routes/speechRoutes.js";
 import { fileURLToPath } from 'url';
 import path from 'path';
 

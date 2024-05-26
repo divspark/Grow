@@ -64,21 +64,21 @@ function Login() {
               <p className="text-secondary">Get access to your account</p>
             </div>
             {/* Social Login */}
-            <button className="btn btn-lg btn-outline-secondary btn-outline-custom w-100 mb-3">
+            {/* <button className="btn btn-lg btn-outline-secondary btn-outline-custom w-100 mb-3">
               <i className="bx bxl-google text-danger me-1 fs-6"></i>
               Login With Google
-            </button>
-            <button className="btn btn-lg btn-outline-secondary btn-outline-custom w-100">
+            </button> */}
+            {/* <button className="btn btn-lg btn-outline-secondary btn-outline-custom w-100">
               <i className="bx bxl-facebook text-primary me-1 fs-6"></i>
               Login With Facebook
-            </button>
+            </button> */}
             {/* /Social Login */}
 
             {/* Divider */}
-            <div className="position-relative">
+            {/* <div className="position-relative">
               <hr className="text-secondary divider" />
               <div className="divider-content-center">or</div>
-            </div>
+            </div> */}
             {/* /Divider */}
 
             {/* form */}
