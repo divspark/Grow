@@ -53,6 +53,7 @@ app.use("/api/v1/payment", paymentRoutes);
 app.use("/api/v1/recipe", RecipeRoutes);
 app.use("/api/v1/recognize", RecognizeRoutes);
 app.use("/api/v1/upload", uploadRoutes);
+app.use("/api/v1/speech", speechRoutes);
 
 
 app.listen(port, () => {

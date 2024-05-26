@@ -86,10 +86,10 @@ import express from 'express';
 import nlp from 'compromise';
 import cors from 'cors';
 
-const app = express();
-const port = 3002;
+// const app = express();
+// const port = 3002;
 
-app.use(cors());
+// app.use(cors());
 
 // Define enum for units of measurement
 const Unit = {
