@@ -21,6 +21,11 @@ import SpeechRecogination from './components/Features/SpeechRecogination.jsx';
 import AddItem from './pages/producer/AddItem.jsx';
 import Search from './pages/consumer/Search.jsx';
 import FeedbackForm from './pages/consumer/FeedbackForm.jsx';
+import Dashboard from './pages/admin/Dashboard.jsx';
+import Products from './pages/admin/Products.jsx';
+// import Customers from './pages/admin/customers.jsx';
+import Customer from './pages/admin/Customer.jsx';
+import Transaction from './pages/admin/Transaction.jsx';
 //import UploadImage from './components/Features/CameraRecogination.jsx';
 
 
@@ -59,6 +64,13 @@ const App = () => {
             <Route path="/speech" element={<SpeechRecogination />} />
             {/* <Route path="/image" element={<UploadImage />} /> */}
 
+
+
+            {/* Admin */}
+            <Route path="/admin/dashboard" element={<Dashboard />} />
+            <Route path="/admin/products" element={<Products />} />
+            <Route path="/admin/customers" element={<Customer />} />
+            <Route path="/admin/transaction" element={<Transaction />} />
           </Routes>
     </Router>
 

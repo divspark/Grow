@@ -1,47 +1,53 @@
+import React from 'react'
 import React, { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard';
 import axios from 'axios';
 
-const RecipeList = ({ query }) => {
-  const [recipes, setRecipes] = useState([]);
-  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3000/api/v1/recipe/recipes?q=${query}`);
-        setRecipes(response.data || []); // Ensure recipes is an array
-      } catch (err) {
-        setError('Failed to fetch recipes');
-        console.error(err);
-      }
-    };
-
-    fetchRecipes();
-  }, [query]);
-
-  return (
-    <div className="recipe-list">
-      <h1>Recipe List</h1>
-      <div className="recipe-card-list">
-        {error ? (
-          <p>{error}</p>
-        ) : recipes.length > 0 ? (
-          recipes.map(recipe => (
-            <RecipeCard
-              key={recipe.id}
-              recipe={recipe} // Pass the recipe object directly
-            />
-          ))
-        ) : (
-          <p>No recipes found</p>
-        )}
+const HealthList = ({ query }) => {
+    const [recipes, setRecipes] = useState([]);
+    const [error, setError] = useState(null);
+  
+    useEffect(() => {
+      const fetchRecipes = async () => {
+        try {
+          const response = await axios.get(`http://localhost:3000/api/v1/recipe/recipes?health=${query}`);
+          setRecipes(response.data || []); // Ensure recipes is an array
+        } catch (err) {
+          setError('Failed to fetch recipes');
+          console.error(err);
+        }
+      };
+  
+      fetchRecipes();
+    }, [query]);
+  
+    return (
+      <div className="recipe-list">
+        <h1>Recipe List</h1>
+        <div className="recipe-card-list">
+          {error ? (
+            <p>{error}</p>
+          ) : recipes.length > 0 ? (
+            recipes.map(recipe => (
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe} // Pass the recipe object directly
+              />
+            ))
+          ) : (
+            <p>No recipes found</p>
+          )}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
+  
 
-export default RecipeList;
+export default HealthList
+
+
+
 
 // import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
