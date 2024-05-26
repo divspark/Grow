@@ -10,7 +10,7 @@ app.use(cookieParser());
 app.post("/login", HandleUserLogin);
 app.post("/signup", HandleUserSignup);
 app.get("/all", GetAllUser);
-app.delete("/delete", deleteUserByEmail);
+app.delete("/email/:email", deleteUserByEmail);
 
 // app.get("/login", (req, res) => {
 //     res.sendFile(

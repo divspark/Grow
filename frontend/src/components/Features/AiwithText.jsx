@@ -103,7 +103,7 @@ export const AiwithText = () => {
           placeholder="Search Food with Category using Generative AI"
           onChange={(e) => handleChangeSearch(e)}
         />
-        <button style={{ marginLeft: "20px" }} onClick={() => handleClick()}>
+        <button className="ai_btn" style={{ marginLeft: "20px" }} onClick={() => handleClick()}>
           Search
         </button>
       </div>
@@ -121,7 +121,7 @@ export const AiwithText = () => {
       {loading ? (
         <p className="loading">Loading ...</p>
       ) : (
-        <div className="cards-container">
+        <div className="cards-container-ai">
           {Array.isArray(aiResponse) && aiResponse.map((item, index) => (
             <div key={index} className="card">
               <img src={item.Image} alt={item.Name} className="card-image" />

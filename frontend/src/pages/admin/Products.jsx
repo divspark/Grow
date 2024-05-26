@@ -4,6 +4,7 @@ import { FaPlus } from "react-icons/fa";
 import axios from "axios";
 import AdminSidebar from "../../components/admin/AdminSlidebar";
 import TableHOC from "../../components/admin/TableHOC";
+import '../../styles/admin/App.scss'
 
 const columns = [
   {
@@ -29,10 +30,10 @@ const Products = () => {
 
   useEffect(() => {
     // Fetch data from the backend
-    axios.get('/api/products')
+    axios.get('http://localhost:5000/api/v1/product/admin-products')
       .then(response => {
         const fetchedData = response.data.map(product => ({
-          photo: <img src={product.image} alt={product.name} />,
+          photo: <img src={product.photo} alt={product.name} />,
           name: product.name,
           price: product.price,
           stock: product.stock,
