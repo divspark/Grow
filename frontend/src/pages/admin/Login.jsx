@@ -33,6 +33,9 @@ function Login() {
       } else if (role === 'producer') {
         window.location.href = '/producer';
       }
+      else if (role === 'admin') {
+        window.location.href = '/admin/dashboard';
+      }
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong");
     }

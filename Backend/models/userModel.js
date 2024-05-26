@@ -19,7 +19,7 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  role: { type: String, enum: ['producer', 'consumer'], default: 'consumer' }, // Adding a role field
+  role: { type: String, enum: ['producer', 'consumer','admin'], default: 'consumer' }, // Adding a role field
   district:{type:String},
   state:{type:String},
 });
