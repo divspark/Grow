@@ -103,7 +103,7 @@ export const AiwithText = () => {
           placeholder="Search Food with Category using Generative AI"
           onChange={(e) => handleChangeSearch(e)}
         />
-        <button className="ai_btn" style={{ marginLeft: "20px" }} onClick={() => handleClick()}>
+        <button className="ai-btn" style={{ marginLeft: "20px" }} onClick={() => handleClick()}>
           Search
         </button>
       </div>
