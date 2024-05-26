@@ -19,6 +19,7 @@ const Cart = () => {
 
   return (
     <div className="cart">
+      
       {/* Existing code */}
       <div className="cart-items">
         <div className="cart-item-title bold">

@@ -21,7 +21,7 @@ const HomeProducer = () => {
 
   useEffect(() => {
     // Fetch testimonials data from backend API
-    axios.get("http://localhost:3000/api/v1/testimonials/all")
+    axios.get("http://localhost:5000/api/v1/testimonials/all")
       .then(response => {
         // Set fetched testimonials data to state
         setTestimonials(response.data);
@@ -33,7 +33,7 @@ const HomeProducer = () => {
 
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/v1/product/latest") // Replace with your backend endpoint
+    axios.get("http://localhost:5000/api/v1/product/latest") // Replace with your backend endpoint
       .then(response => {
         setProducts(response.data);
       })
@@ -118,11 +118,11 @@ const HomeProducer = () => {
         showThumbs={false}
         showStatus={false}
         autoPlay={true}
-        interval={6100}
+        interval={50}
       >
         {testimonials.map((testimonial, index) => (
           <div key={index}>
-            <img src={testimonial.photo || `http://localhost:3000/${testimonial.photo}`} alt={testimonial.name} />
+            <img src={testimonial.photo || `http://localhost:5000/${testimonial.photo}`} alt={testimonial.name} />
             <div className="myCarousel">
               <h3>{testimonial.name}</h3>
               <p>{testimonial.message}</p>

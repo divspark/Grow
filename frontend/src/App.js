@@ -1,15 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Home from "./pages/consumer/Home"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from "./pages/consumer/Home";
 import Product from './pages/consumer/Product';
 import Cart from './pages/consumer/Cart';
-import Checkout from "./pages/consumer/Checkout"
+import Checkout from "./pages/consumer/Checkout";
 import MyItems from './pages/producer/MyItems';
 import BasicInput from './components/Features/BasicInput.jsx';
-import HomeProducer from './pages/consumer/HomeProducer.jsx'
-import Navbar from './components/consumer/Navbar';
+import HomeProducer from './pages/consumer/HomeProducer.jsx';
 import Login from './pages/admin/Login';
-import Signup from './pages/admin/Signup.jsx'
+import Signup from './pages/admin/Signup.jsx';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFontAwesome, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -20,32 +19,33 @@ import SmartBite from './pages/consumer/SmartBite.jsx';
 import SpeechRecogination from './components/Features/SpeechRecogination.jsx';
 import AddItem from './pages/producer/AddItem.jsx';
 import Search from './pages/consumer/Search.jsx';
-import FeedbackForm from './pages/consumer/FeedbackForm.jsx';
+//import FeedbackForm from './pages/consumer/FeedbackForm.jsx';
 import Dashboard from './pages/admin/Dashboard.jsx';
 import Products from './pages/admin/Products.jsx';
 // import Customers from './pages/admin/customers.jsx';
 import Customer from './pages/admin/Customer.jsx';
 import Transaction from './pages/admin/Transaction.jsx';
+import { ContactUs } from './pages/consumer/Contact.jsx';
 //import UploadImage from './components/Features/CameraRecogination.jsx';
+import ConditionalNavbar from './components/consumer/ConditionalNavbar.jsx';
+import AiwithText from './components/Features/AiwithText.jsx';
 
-
-library.add(fas, faTwitter, faFontAwesome)
+library.add(fas, faTwitter, faFontAwesome);
 
 const App = () => {
   return (
-
     <Router>
-
-        <Navbar />
-        
-          <Routes>
-
-            {/*Producer*/}
-            <Route exact path="/producer/:id" element={<Home />} />
-            <Route path="/producer/:id/product" element={<Product />} />
-            <Route path="/producer/:id/cart" element={<Cart />} />
-            <Route path="/producer/:id/checkout" element={<Checkout />} />
-            <Route path="/producer/additems" element={<AddItem />} />
+      <ConditionalNavbar />
+      <Routes>
+        {/* Producer */}
+        <Route exact path="/producer" element={<Home />} />
+        <Route path="/producer/product" element={<Product />} />
+        <Route path="/producer/cart" element={<Cart />} />
+        <Route path="/producer/checkout" element={<Checkout />} />
+        <Route path="/producer/additems" element={<AddItem />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/speech" element={<SpeechRecogination />} />
 
             {/*Consumer*/}
             <Route exact path="/" element={<HomeProducer />} />
@@ -64,16 +64,8 @@ const App = () => {
             <Route path="/speech" element={<SpeechRecogination />} />
             {/* <Route path="/image" element={<UploadImage />} /> */}
 
-
-
-            {/* Admin */}
-            <Route path="/admin/dashboard" element={<Dashboard />} />
-            <Route path="/admin/products" element={<Products />} />
-            <Route path="/admin/customers" element={<Customer />} />
-            <Route path="/admin/transaction" element={<Transaction />} />
           </Routes>
     </Router>
-
   );
 };
 

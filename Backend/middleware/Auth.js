@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import User from "../models/userModel.js";
 
 const secretKey = "Dabbemein4098";
 
@@ -47,3 +48,22 @@ export const authenticateToken = (req, res, next) => {
 //       }
 //     };
 //   }
+
+export const authMiddleware = async (req, res, next) => {
+  const token = req.header('Authorization').replace('Bearer ', '');
+
+  try {
+    const decoded = jwt.verify(token, 'your_jwt_secret'); // Replace with your JWT secret
+    const user = await User.findById(decoded.id);
+
+    if (!user) {
+      throw new Error('User not found');
+    }
+
+    req.user = user;
+    req.district = decoded.district; // Attach district to the request object
+    next();
+  } catch (error) {
+    res.status(401).json({ error: 'Not authenticated' });
+  }
+};

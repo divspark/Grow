@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import SpeechRecogination from '../../components/Features/SpeechRecogination';
 import CameraRecogination from '../../components/Features/CameraRecogination';
-import Basic from '../../components/Features/Basic';
+//import Basic from '../../components/Features/Basic';
 import BasicInput from '../../components/Features/BasicInput';
+import Prod_navbar from '../../components/main/Prod_navbar';
 
 const AddItem = () => {
   const [selectedOption, setSelectedOption] = useState('');
@@ -21,6 +22,8 @@ const AddItem = () => {
   };
 
   return (
+    <>
+    <Prod_navbar />
     <div>
       <div className="options">
       <button onClick={() => setSelectedOption('Basic')}>Basic</button>
@@ -31,6 +34,7 @@ const AddItem = () => {
         {renderOption()}
       </div>
     </div>
+    </>
   );
 };
 

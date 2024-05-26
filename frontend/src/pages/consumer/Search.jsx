@@ -11,7 +11,7 @@ const Search = () => {
         const fetchData = async () => {
             setIsLoading(true);
             try {
-                const response = await axios.get(`http://your-backend-url.com/api/data?search=${searchTerm}`);
+                const response = await axios.get(`http://localhost:5000/api/v1/product/name/${searchTerm}`);
                 setSearchResults(response.data);
                 setError(null);
             } catch (error) {
@@ -41,13 +41,13 @@ const Search = () => {
             />
             {isLoading && <p>Loading...</p>}
             {error && <p>{error}</p>}
-            {!isLoading && !error && (
-                <ul>
-                    {searchResults.map((result) => (
-                        <li key={result.id}>{result.name}</li>
-                    ))}
-                </ul>
-            )}
+            {!isLoading && !error && Array.isArray(searchResults) && (
+    <ul>
+        {searchResults.map((result) => (
+            <li key={result.id}>{result.name}</li>
+        ))}
+    </ul>
+)}
         </div>
     );
 };

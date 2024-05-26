@@ -20,7 +20,7 @@ const PlaceOrder = () => {
   const handlePlaceOrder = async () => {
     try {
       //setLoading(true); // Set loading state to true
-      const response = await axios.post('http://localhost:3000/api/v1/order/new', {
+      const response = await axios.post('http://localhost:5000/api/v1/order/new', {
         user:  email , // Send email in user object
         products: cartItems, // Send cart items to the backend
         shippingAddress: {
