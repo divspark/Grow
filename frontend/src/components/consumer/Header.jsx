@@ -5,8 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Header = () => {
   return (
-    <div className="Header">
-      <div className="header-content">
+    <div className="Header-producer">
+      <div className="header-content-producer">
         <div className="content">
           <h2>
             Organic Veggies,
@@ -19,7 +19,7 @@ const Header = () => {
             <button>Search Now</button>
           </div>
         </div>
-        <div className="carousel">
+        <div className="carousel3">
           <Carousel>
             <Carousel.Item>
               <img src={assets.slider_1} alt="Image1"  />
