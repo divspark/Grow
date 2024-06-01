@@ -127,8 +127,11 @@ export const newProduct = async (req, res, next) => {
 
 export const getLatestProducts = async (req, res, next) => {
   const products = await Product.find({}).sort({ createdAt: -1 }).limit(6);
+
+  // res.setHeader("Access-Control-Allow-Origin", "*")
+  // res.setHeader("Access-Control-Allow-Credentials", "true");
   
-  return res.status(200).json(products);
+  return res.status(200).json(products).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");;
 };
 
 export const getAllCategories = async (req, res, next) => {
