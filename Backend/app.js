@@ -45,7 +45,12 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+    origin: "XXXXXXXXXXXXXXXXXXXXX",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+
+}));
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/product", productRoutes);
 app.use("/api/v1/order", orderRoutes);
