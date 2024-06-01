@@ -37,7 +37,9 @@ const HomeProducer = () => {
     const config = {
       headers: {
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": true,
       }
     };
     axios.get("https://grow-backend-pi.vercel.app/product/latest",config) // Replace with your backend endpoint
