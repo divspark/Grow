@@ -41,14 +41,20 @@ connectDB();
 
 
 // app.use('/uploads', express.static(uploadsPath));
-app.use(cors({
-    origin: "https://grow-frontend-lime.vercel.app",
-    methods: ["GET", "POST","DELETE"],
-    optionsSuccessStatus: 200,
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization'], 
+const corsOrigin ={
+  origin:'https://grow-frontend-lime.vercel.app', //or whatever port your frontend is using
+  credentials:true,            
+  optionSuccessStatus:200
+}
+app.use(cors(corsOrigin));
+// app.use(cors({
+//     origin: "https://grow-frontend-lime.vercel.app",
+//     methods: ["GET", "POST","DELETE"],
+//     optionsSuccessStatus: 200,
+//     credentials: true,
+//     allowedHeaders: ['Content-Type', 'Authorization'], 
 
-}));
+// }));
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
