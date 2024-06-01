@@ -51,8 +51,9 @@ function Login() {
 
       {/* Right side */}
       <div className="col-lg-6">
-        <div className="row align-items-center justify-content-center h-100 g-0 px-4 ps-sm-0">
-          <div className="col col-sm-6 col-lg-7 col-xl-6 px-30">
+        <div className="row align-items-center justify-content-center h-100 g-0 px-6 ps-sm-0">
+          <div className="login-cont">
+          <div className="col col-sm-6 col-lg-7 col-xl-6 py-30 m-3">
             {/* logo */}
             <a href="a" className="d-flex justify-content-center mb-4">
               {/* <img src="images/logo.png" alt="" width="60" /> */}
@@ -156,6 +157,7 @@ function Login() {
                 </a>
               </small>
             </div>
+          </div>
           </div>
         </div>
       </div>

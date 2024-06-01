@@ -51,6 +51,7 @@ function Signup() {
       {/* Right side */}
       <div className="col-lg-6">
         <div className="row align-items-center justify-content-center h-100 g-0 px-4 ps-sm-0">
+          <div className="login-cont">
           <div className="col col-sm-6 col-lg-7 col-xl-6">
             <div className="text-center mb-5">
               <h3 className="fw-bold">Sign Up</h3>
@@ -141,6 +142,7 @@ function Signup() {
                 </a>
               </small>
             </div>
+          </div>
           </div>
         </div>
       </div>

@@ -9,11 +9,7 @@ const Calories = ({ query }) => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-<<<<<<< HEAD
-        const response = await axios.get(`http://localhost:3000/api/v1/recipe/recipes?calories=${query}`);
-=======
         const response = await axios.get(`http://localhost:5000/api/v1/recipe/recipes?calories=${query}`);
->>>>>>> 18dc36a44f5a10ff5977c806ed3a0192da4b8c06
         setRecipes(response.data || []); // Ensure recipes is an array
       } catch (err) {
         setError('Failed to fetch recipes');

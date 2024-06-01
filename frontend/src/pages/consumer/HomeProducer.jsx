@@ -16,20 +16,20 @@ import useStore from "../../store/useStore";
 const HomeProducer = () => {
   const addToCart = useStore((state) => state.addToCart);
   const [products, setProducts] = useState([]);
-  const [testimonials, setTestimonials] = useState([]);
+  //const [testimonials, setTestimonials] = useState([]);
   //const [error, setError] = useState(null);
 
-  useEffect(() => {
-    // Fetch testimonials data from backend API
-    axios.get("http://localhost:5000/api/v1/testimonials/all")
-      .then(response => {
-        // Set fetched testimonials data to state
-        setTestimonials(response.data);
-      })
-      .catch(error => {
-        //setError(error.message);
-      });
-  }, []); // Empty dependency array to ensure useEffect runs only once on component mount
+  // useEffect(() => {
+  //   // Fetch testimonials data from backend API
+  //   axios.get("http://localhost:5000/api/v1/testimonials/all")
+  //     .then(response => {
+  //       // Set fetched testimonials data to state
+  //       setTestimonials(response.data);
+  //     })
+  //     .catch(error => {
+  //       //setError(error.message);
+  //     });
+  // }, []); // Empty dependency array to ensure useEffect runs only once on component mount
 
 
   useEffect(() => {
@@ -109,7 +109,7 @@ const HomeProducer = () => {
         </div>
       </div>
 
-      <div className="carousel2">
+      {/* <div className="carousel2">
       <h2>Testimonials</h2>
       <p>What others have to say about us!</p>
       <Carousel
@@ -128,7 +128,7 @@ const HomeProducer = () => {
       }
       renderArrowNext={(clickHandler, hasNext, labelNext) =>
           hasNext && (
-              <button type="button" style={{display:"none"}} onClick={clickHandler} className="arrow arrow-next">
+              <button type="button" style={{display:"none"}} onClick={clickHandler()} className="arrow arrow-next">
                   &#9654;
               </button>
           )
@@ -144,9 +144,9 @@ const HomeProducer = () => {
           </div>
         ))}
       </Carousel>
-    </div>
+    </div> */}
 
-      {/* <div className="carousel2">
+      <div className="carousel2">
         <h2>Testimonials</h2>
         <p>What others have to say about us!</p>
         <Carousel
@@ -184,7 +184,7 @@ const HomeProducer = () => {
             </div>
           </div>
         </Carousel>
-      </div> */}
+      </div>
 
       <div className="footer">
         <div className="sb__footer section__padding">
