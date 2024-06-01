@@ -73,7 +73,7 @@ app.use(cookieParser());
 // app.use("/api/v1/speech", speechRoutes);
 
 app.get("/", (req, res) => {
-  res.send("API is running....");
+  res.json("API is running....");
 })
 app.use("/user", userRoutes);
 app.use("/product", productRoutes);
