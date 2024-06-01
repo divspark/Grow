@@ -41,10 +41,6 @@ const uploadsPath = path.join(currentDirPath, 'uploads');
 
 
 app.use('/uploads', express.static(uploadsPath));
-app.use(express.json());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
 app.use(cors({
     origin: "https://grow-frontend-lime.vercel.app",
     methods: ["GET", "POST","DELETE"],
@@ -52,6 +48,11 @@ app.use(cors({
     credentials: true
 
 }));
+app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
+
 // app.use("/api/v1/user", userRoutes);
 // app.use("/api/v1/product", productRoutes);
 // app.use("/api/v1/order", orderRoutes);
