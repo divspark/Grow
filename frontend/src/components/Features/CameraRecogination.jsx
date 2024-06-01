@@ -28,7 +28,7 @@ const UploadImage = () => {
           "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
         }
       };
-      const response = await axios.post('https://grow-backend-kappa.vercel.app/recognize/new',config, formData, {
+      const response = await axios.post('https://grow-backend-pi.vercel.app/recognize/new',config, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

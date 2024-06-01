@@ -3,8 +3,8 @@ import axios from 'axios';
 
 // const PRODUCT_API_URL = 'http://localhost:5000/api/v1/product';
 // const BACKEND_API_URL = 'http://localhost:5000/api/v1/product/new';
-const PRODUCT_API_URL = 'https://grow-backend-kappa.vercel.app/product';
-const BACKEND_API_URL = 'https://grow-backend-kappa.vercel.app/product/new';
+const PRODUCT_API_URL = 'https://grow-backend-pi.vercel.app/product';
+const BACKEND_API_URL = 'https://grow-backend-pi.vercel.app/product/new';
 
 const useStore = create((set, get) => ({
     cartItems: [],

@@ -39,7 +39,7 @@ const PlaceOrder = () => {
           "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
         }
       };
-      const response = await axios.post('https://grow-backend-kappa.vercel.app/order/new',config, {
+      const response = await axios.post('https://grow-backend-pi.vercel.app/order/new',config, {
         user:  email , // Send email in user object
         products: cartItems, // Send cart items to the backend
         shippingAddress: {

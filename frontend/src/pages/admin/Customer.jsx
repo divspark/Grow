@@ -59,7 +59,7 @@ const Customers = () => {
         "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
       }
     };
-    axios.get('https://grow-backend-kappa.vercel.app/user/all',config)
+    axios.get('https://grow-backend-pi.vercel.app/user/all',config)
       .then(response => {
         const fetchedData = response.data.map(customer => ({
           avatar: (
@@ -94,7 +94,7 @@ const Customers = () => {
         "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
       }
     };
-    axios.delete(`https://grow-backend-kappa.vercel.app/user/email/${email}`,config)
+    axios.delete(`https://grow-backend-pi.vercel.app/user/email/${email}`,config)
       .then(() => {
         setData(prevData => prevData.filter(customer => customer.email !== email));
       })

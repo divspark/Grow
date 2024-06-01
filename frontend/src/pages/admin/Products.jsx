@@ -37,7 +37,7 @@ const Products = () => {
         "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
       }
     };
-    axios.get('https://grow-backend-kappa.vercel.app/product/admin-products',config)
+    axios.get('https://grow-backend-pi.vercel.app/product/admin-products',config)
       .then(response => {
         const fetchedData = response.data.map(product => ({
           photo: <img src={product.photo} alt={product.name} />,

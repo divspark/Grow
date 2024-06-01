@@ -28,7 +28,7 @@ const Search = () => {
                   "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
                 }
               };
-            const response = await axios.get(`https://grow-backend-kappa.vercel.app/product/name/${searchTerm}`,config);
+            const response = await axios.get(`https://grow-backend-pi.vercel.app/product/name/${searchTerm}`,config);
             setSearchResults(response.data ? [response.data] : []);
             setError(null);
         } catch (error) {

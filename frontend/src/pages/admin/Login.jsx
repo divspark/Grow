@@ -27,7 +27,7 @@ function Login() {
           "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
         }
       };
-      const response = await axios.post("https://grow-backend-kappa.vercel.app/user/login",config, {
+      const response = await axios.post("https://grow-backend-pi.vercel.app/user/login",config, {
         email,
         password,
         role,
