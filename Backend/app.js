@@ -13,10 +13,10 @@ import RecipeRoutes from "./routes/RecipeRoutes.js";
 import RecognizeRoutes from "./routes/RecognizeRoute.js";
 import uploadRoutes from "./routes/UploadRoute.js";
 import speechRoutes from "./routes/speechRoutes.js";
-import { fileURLToPath } from 'url';
-import path from 'path';
+// import { fileURLToPath } from 'url';
+// import path from 'path';
 
-import { dirname } from 'path';
+// import { dirname } from 'path';
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -83,7 +83,7 @@ app.use("/testimonials", TestimonialsRoutes);
 app.use("/payment", paymentRoutes);
 app.use("/recipe", RecipeRoutes);
 app.use("/recognize", RecognizeRoutes);
-app.use("/upload", uploadRoutes);
+//sapp.use("/upload", uploadRoutes);
 app.use("/speech", speechRoutes);
 
 
