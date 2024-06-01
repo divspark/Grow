@@ -10,9 +10,9 @@ import bodyParser from "body-parser";
 import TestimonialsRoutes from "./routes/TestimonialsRoutes.js";
 import paymentRoutes from "./routes/paymentRoutes.js";
 import RecipeRoutes from "./routes/RecipeRoutes.js";
-import RecognizeRoutes from "./routes/RecognizeRoute.js";
-import uploadRoutes from "./routes/UploadRoute.js";
-import speechRoutes from "./routes/speechRoutes.js";
+//import RecognizeRoutes from "./routes/RecognizeRoute.js";
+//import uploadRoutes from "./routes/UploadRoute.js";
+//import speechRoutes from "./routes/speechRoutes.js";
 // import { fileURLToPath } from 'url';
 // import path from 'path';
 
@@ -82,9 +82,9 @@ app.use("/order", orderRoutes);
 app.use("/testimonials", TestimonialsRoutes);
 app.use("/payment", paymentRoutes);
 app.use("/recipe", RecipeRoutes);
-app.use("/recognize", RecognizeRoutes);
+//app.use("/recognize", RecognizeRoutes);
 //sapp.use("/upload", uploadRoutes);
-app.use("/speech", speechRoutes);
+//app.use("/speech", speechRoutes);
 
 
 app.listen(port, () => {
