@@ -52,15 +52,25 @@ app.use(cors({
     credentials: true
 
 }));
-app.use("/api/v1/user", userRoutes);
-app.use("/api/v1/product", productRoutes);
-app.use("/api/v1/order", orderRoutes);
-app.use("/api/v1/testimonials", TestimonialsRoutes);
-app.use("/api/v1/payment", paymentRoutes);
-app.use("/api/v1/recipe", RecipeRoutes);
-app.use("/api/v1/recognize", RecognizeRoutes);
-app.use("/api/v1/upload", uploadRoutes);
-app.use("/api/v1/speech", speechRoutes);
+// app.use("/api/v1/user", userRoutes);
+// app.use("/api/v1/product", productRoutes);
+// app.use("/api/v1/order", orderRoutes);
+// app.use("/api/v1/testimonials", TestimonialsRoutes);
+// app.use("/api/v1/payment", paymentRoutes);
+// app.use("/api/v1/recipe", RecipeRoutes);
+// app.use("/api/v1/recognize", RecognizeRoutes);
+// app.use("/api/v1/upload", uploadRoutes);
+// app.use("/api/v1/speech", speechRoutes);
+
+app.use("/user", userRoutes);
+app.use("/product", productRoutes);
+app.use("/order", orderRoutes);
+app.use("/testimonials", TestimonialsRoutes);
+app.use("/payment", paymentRoutes);
+app.use("/recipe", RecipeRoutes);
+app.use("/recognize", RecognizeRoutes);
+app.use("/upload", uploadRoutes);
+app.use("/speech", speechRoutes);
 
 
 app.listen(port, () => {
