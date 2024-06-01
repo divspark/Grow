@@ -9,7 +9,13 @@ const Product = () => {
 
   useEffect(() => {
     // axios.get("http://localhost:5000/api/v1/product/admin-products") // Replace with your backend endpoint
-    axios.get("https://grow-backend-kappa.vercel.app/product/admin-products")
+    const config = {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+      }
+    };
+    axios.get("https://grow-backend-kappa.vercel.app/product/admin-products",config)
       .then(response => {
         setProducts(response.data);
       })

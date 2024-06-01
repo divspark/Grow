@@ -28,24 +28,25 @@ connectDB();
 // app.use(express.static("D:/Project Modules/Payment Gateway/views"));
 // app.use(express.static("./controllers/views"));
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-
-
-const currentFileUrl = import.meta.url;
-const currentDirPath = path.dirname(fileURLToPath(currentFileUrl)); // Use path directly
-const uploadsPath = path.join(currentDirPath, 'uploads');
+// app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 
+// const currentFileUrl = import.meta.url;
+// const currentDirPath = path.dirname(fileURLToPath(currentFileUrl)); // Use path directly
+// const uploadsPath = path.join(currentDirPath, 'uploads');
 
-app.use('/uploads', express.static(uploadsPath));
+
+
+// app.use('/uploads', express.static(uploadsPath));
 app.use(cors({
     origin: "https://grow-frontend-lime.vercel.app",
     methods: ["GET", "POST","DELETE"],
     optionsSuccessStatus: 200,
-    credentials: true
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'], 
 
 }));
 app.use(express.json());

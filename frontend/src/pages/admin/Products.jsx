@@ -31,7 +31,13 @@ const Products = () => {
   useEffect(() => {
     // Fetch data from the backend
     // axios.get('http://localhost:5000/api/v1/product/admin-products')
-    axios.get('https://grow-backend-kappa.vercel.app/product/admin-products')
+    const config = {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+      }
+    };
+    axios.get('https://grow-backend-kappa.vercel.app/product/admin-products',config)
       .then(response => {
         const fetchedData = response.data.map(product => ({
           photo: <img src={product.photo} alt={product.name} />,

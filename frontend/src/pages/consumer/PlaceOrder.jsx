@@ -33,7 +33,13 @@ const PlaceOrder = () => {
       //   status: 'pending',
       //   totalAmount: getTotalCartAmount() // Send total amount to the backend
       // });
-      const response = await axios.post('https://grow-backend-kappa.vercel.app/order/new', {
+      const config = {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+        }
+      };
+      const response = await axios.post('https://grow-backend-kappa.vercel.app/order/new',config, {
         user:  email , // Send email in user object
         products: cartItems, // Send cart items to the backend
         shippingAddress: {

@@ -53,7 +53,13 @@ const Customers = () => {
   useEffect(() => {
     // Fetch data from the backend
     // 
-    axios.get('https://grow-backend-kappa.vercel.app/user/all')
+    const config = {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+      }
+    };
+    axios.get('https://grow-backend-kappa.vercel.app/user/all',config)
       .then(response => {
         const fetchedData = response.data.map(customer => ({
           avatar: (
@@ -82,7 +88,13 @@ const Customers = () => {
 
   const handleDelete = (email) => {
     // axios.delete(`http://localhost:5000/api/v1/user/email/${email}`)
-    axios.delete(`https://grow-backend-kappa.vercel.app/user/email/${email}`)
+    const config = {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+      }
+    };
+    axios.delete(`https://grow-backend-kappa.vercel.app/user/email/${email}`,config)
       .then(() => {
         setData(prevData => prevData.filter(customer => customer.email !== email));
       })

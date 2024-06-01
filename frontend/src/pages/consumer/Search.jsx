@@ -22,7 +22,13 @@ const Search = () => {
         setIsLoading(true);
         try {
             // const response = await axios.get(`http://localhost:5000/api/v1/product/name/${searchTerm}`);
-            const response = await axios.get(`https://grow-backend-kappa.vercel.app/product/name/${searchTerm}`);
+            const config = {
+                headers: {
+                  "Access-Control-Allow-Origin": "*",
+                  "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+                }
+              };
+            const response = await axios.get(`https://grow-backend-kappa.vercel.app/product/name/${searchTerm}`,config);
             setSearchResults(response.data ? [response.data] : []);
             setError(null);
         } catch (error) {
