@@ -52,7 +52,11 @@ const BasicInput = () => {
         formData.append("file", file);
 
         try {
-            const response = await fetch("http://localhost:5000/api/v1/upload/new", {
+            // const response = await fetch("http://localhost:5000/api/v1/upload/new", {
+            //     method: "POST",
+            //     body: formData,
+            // });
+            const response = await fetch("https://grow-backend-kappa.vercel.app/upload/new", {
                 method: "POST",
                 body: formData,
             });

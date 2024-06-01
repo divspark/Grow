@@ -8,7 +8,8 @@ const Product = () => {
   const addToCart = useStore((state) => state.addToCart);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/v1/product/admin-products") // Replace with your backend endpoint
+    // axios.get("http://localhost:5000/api/v1/product/admin-products") // Replace with your backend endpoint
+    axios.get("https://grow-backend-kappa.vercel.app/product/admin-products")
       .then(response => {
         setProducts(response.data);
       })

@@ -16,7 +16,14 @@ function Signup() {
     //setError("");
 
     try {
-      const response = await axios.post("http://localhost:5000/api/v1/user/signup", {
+      // const response = await axios.post("http://localhost:5000/api/v1/user/signup", {
+      //   email,
+      //   password,
+      //   role,
+      //   district,
+      //   state
+      // });
+      const response = await axios.post("https://grow-backend-kappa.vercel.app/user/signup", {
         email,
         password,
         role,

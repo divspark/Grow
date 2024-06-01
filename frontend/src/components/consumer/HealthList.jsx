@@ -11,7 +11,8 @@ const HealthList = ({ query }) => {
     useEffect(() => {
       const fetchRecipes = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/api/v1/recipe/recipes?health=${query}`);
+          // const response = await axios.get(`http://localhost:5000/api/v1/recipe/recipes?health=${query}`);
+          const response = await axios.get(`https://grow-backend-kappa.vercel.app/recipe/recipes?health=${query}`);
           setRecipes(response.data || []); // Ensure recipes is an array
         } catch (err) {
           setError('Failed to fetch recipes');

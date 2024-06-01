@@ -33,7 +33,8 @@ const HomeProducer = () => {
 
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/v1/product/latest") // Replace with your backend endpoint
+    // axios.get("http://localhost:5000/api/v1/product/latest") // Replace with your backend endpoint
+    axios.get("https://grow-backend-kappa.vercel.app/product/latest") // Replace with your backend endpoint
       .then(response => {
         setProducts(response.data);
       })

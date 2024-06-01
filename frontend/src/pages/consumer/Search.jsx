@@ -21,7 +21,8 @@ const Search = () => {
         }
         setIsLoading(true);
         try {
-            const response = await axios.get(`http://localhost:5000/api/v1/product/name/${searchTerm}`);
+            // const response = await axios.get(`http://localhost:5000/api/v1/product/name/${searchTerm}`);
+            const response = await axios.get(`https://grow-backend-kappa.vercel.app/product/name/${searchTerm}`);
             setSearchResults(response.data ? [response.data] : []);
             setError(null);
         } catch (error) {

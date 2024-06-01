@@ -52,7 +52,8 @@ const Customers = () => {
 
   useEffect(() => {
     // Fetch data from the backend
-    axios.get('http://localhost:5000/api/v1/user/all')
+    // 
+    axios.get('https://grow-backend-kappa.vercel.app/user/all')
       .then(response => {
         const fetchedData = response.data.map(customer => ({
           avatar: (
@@ -80,7 +81,8 @@ const Customers = () => {
   }, []);
 
   const handleDelete = (email) => {
-    axios.delete(`http://localhost:5000/api/v1/user/email/${email}`)
+    // axios.delete(`http://localhost:5000/api/v1/user/email/${email}`)
+    axios.delete(`https://grow-backend-kappa.vercel.app/user/email/${email}`)
       .then(() => {
         setData(prevData => prevData.filter(customer => customer.email !== email));
       })

@@ -17,7 +17,12 @@ const UploadImage = () => {
       setError(null);
 
       // Send image data to backend for recognition
-      const response = await axios.post('http://localhost:5000/api/v1/recognize/new', formData, {
+      // const response = await axios.post('http://localhost:5000/api/v1/recognize/new', formData, {
+      //   headers: {
+      //     'Content-Type': 'multipart/form-data'
+      //   }
+      // });
+      const response = await axios.post('https://grow-backend-kappa.vercel.app/recognize/new', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
