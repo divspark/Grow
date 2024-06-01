@@ -19,6 +19,8 @@ const HomeProducer = () => {
   //const [testimonials, setTestimonials] = useState([]);
   //const [error, setError] = useState(null);
 
+  axios.defaults.withCredentials = true;
+
   // useEffect(() => {
   //   // Fetch testimonials data from backend API
   //   axios.get("http://localhost:5000/api/v1/testimonials/all")
