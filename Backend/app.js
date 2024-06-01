@@ -62,6 +62,9 @@ app.use(cors({
 // app.use("/api/v1/upload", uploadRoutes);
 // app.use("/api/v1/speech", speechRoutes);
 
+app.get("/", (req, res) => {
+  res.send("API is running....");
+})
 app.use("/user", userRoutes);
 app.use("/product", productRoutes);
 app.use("/order", orderRoutes);
