@@ -42,7 +42,7 @@ connectDB();
 
 // app.use('/uploads', express.static(uploadsPath));
 const corsOrigin ={
-  origin:'https://grow-frontend-lime.vercel.app', //or whatever port your frontend is using
+  origin:'*', //or whatever port your frontend is using
   credentials:true,
   allowedHeaders: ['Content-Type', 'Authorization'],
   preflightContinue: false,
