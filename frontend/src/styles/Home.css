@@ -384,6 +384,11 @@ hr {
   bottom: 5% !important;
 }
 
+.carousel2 .control-arrow {
+  color: rgba(255, 255, 255, 0);
+  
+}
+
 .myCarousel h3 {
   color: rgb(18, 63, 11);
   font-weight: 100;

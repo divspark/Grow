@@ -1,10 +1,10 @@
-// import express from "express";
+import express from "express";
 
-// import { voiceReco } from "../controllers/speech.js";
+import { voiceReco } from "../controllers/speech.js";
 
-// const app = express.Router();
+const app = express.Router();
 
-// app.get('/new', voiceReco);
+app.get('/new', voiceReco);
 
 
-// export default app;
+export default app;

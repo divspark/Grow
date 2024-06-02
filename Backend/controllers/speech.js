@@ -75,7 +75,7 @@ export const voiceReco = (req, res) => {
       photo: productData.photo,
       price: productData.price
     };
-    res.json(response);
+    res.json(response).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
   } else {
     res.status(404).json({ error: 'Product not found' });
   }
