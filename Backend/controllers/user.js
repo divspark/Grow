@@ -120,7 +120,7 @@ export const HandleUserSignup = async (req, res) => {
     res.cookie("token", token, { httpOnly: true });
 
     // Respond with success message
-    res.status(201).json({ message: "User created successfully", token ,district});
+    res.status(201).json({ message: "User created successfully", token ,district}).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
   } catch (error) {
     // Handle any errors that occur
     res.status(500).json({ message: error.message });
@@ -131,7 +131,7 @@ export const HandleUserSignup = async (req, res) => {
 export const GetAllUser = async (req, res) => {
   try {
     const users = await User.find({});
-    res.json(users);
+    res.json(users).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

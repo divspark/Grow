@@ -10,7 +10,7 @@ export const newOrder = async (req, res) => {
   
     try {
       const savedOrder = await order.save();
-      res.status(201).json(savedOrder);
+      res.status(201).json(savedOrder).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
     } catch (error) {
       res.status(400).json({ error: error.message });
     }
@@ -40,7 +40,7 @@ export const updateOrder = async (req, res) => {
       // Save the updated order
       const updatedOrder = await order.save();
   
-      res.status(200).json(updatedOrder);
+      res.status(200).json(updatedOrder).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
     } catch (error) {
       res.status(400).json({ error: error.message });
     }
@@ -66,7 +66,7 @@ export const updateOrder = async (req, res) => {
       const orders = await Order.find({ user: userId });
   
       // Return orders as response
-      res.json(orders);
+      res.json(orders).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
