@@ -33,13 +33,13 @@ const PlaceOrder = () => {
       //   status: 'pending',
       //   totalAmount: getTotalCartAmount() // Send total amount to the backend
       // });
-      const config = {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-        }
-      };
-      const response = await axios.post('https://grow-backend-pi.vercel.app/order/new',config, {
+      // const config = {
+      //   headers: {
+      //     "Access-Control-Allow-Origin": "*",
+      //     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+      //   }
+      // };
+      const response = await axios.post('https://grow-backend-pi.vercel.app/order/new', {
         user:  email , // Send email in user object
         products: cartItems, // Send cart items to the backend
         shippingAddress: {

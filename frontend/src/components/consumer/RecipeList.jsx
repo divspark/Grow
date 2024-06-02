@@ -9,14 +9,14 @@ const RecipeList = ({ query }) => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const config = {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-          }
-        };
+        // const config = {
+        //   headers: {
+        //     "Access-Control-Allow-Origin": "*",
+        //     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+        //   }
+        // };
         // const response = await axios.get(`http://localhost:5000/api/v1/recipe/recipes?q=${query}`);
-        const response = await axios.get(`https://grow-backend-pi.vercel.app/recipe/recipes?q=${query}`,config);
+        const response = await axios.get(`https://grow-backend-pi.vercel.app/recipe/recipes?q=${query}`);
         setRecipes(response.data || []); // Ensure recipes is an array
       } catch (err) {
         setError('Failed to fetch recipes');

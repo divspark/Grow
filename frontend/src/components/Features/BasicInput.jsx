@@ -56,13 +56,13 @@ const BasicInput = () => {
             //     method: "POST",
             //     body: formData,
             // });
-            const config = {
-                headers: {
-                  "Access-Control-Allow-Origin": "*",
-                  "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-                }
-              };
-            const response = await fetch("https://grow-backend-pi.vercel.app/upload/new",config, {
+            // const config = {
+            //     headers: {
+            //       "Access-Control-Allow-Origin": "*",
+            //       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+            //     }
+            //   };
+            const response = await fetch("https://grow-backend-pi.vercel.app/upload/new", {
                 method: "POST",
                 body: formData,
             });

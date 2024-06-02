@@ -53,13 +53,13 @@ const Customers = () => {
   useEffect(() => {
     // Fetch data from the backend
     // 
-    const config = {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-      }
-    };
-    axios.get('https://grow-backend-pi.vercel.app/user/all',config)
+    // const config = {
+    //   headers: {
+    //     "Access-Control-Allow-Origin": "*",
+    //     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+    //   }
+    // };
+    axios.get('https://grow-backend-pi.vercel.app/user/all')
       .then(response => {
         const fetchedData = response.data.map(customer => ({
           avatar: (
@@ -88,13 +88,13 @@ const Customers = () => {
 
   const handleDelete = (email) => {
     // axios.delete(`http://localhost:5000/api/v1/user/email/${email}`)
-    const config = {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-      }
-    };
-    axios.delete(`https://grow-backend-pi.vercel.app/user/email/${email}`,config)
+    // const config = {
+    //   headers: {
+    //     "Access-Control-Allow-Origin": "*",
+    //     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+    //   }
+    // };
+    axios.delete(`https://grow-backend-pi.vercel.app/user/email/${email}`)
       .then(() => {
         setData(prevData => prevData.filter(customer => customer.email !== email));
       })

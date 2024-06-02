@@ -23,13 +23,13 @@ function Signup() {
       //   district,
       //   state
       // });
-      const config = {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-        }
-      };
-      const response = await axios.post("https://grow-backend-pi.vercel.app/user/signup",config, {
+      // const config = {
+      //   headers: {
+      //     "Access-Control-Allow-Origin": "*",
+      //     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+      //   }
+      // };
+      const response = await axios.post("https://grow-backend-pi.vercel.app/user/signup", {
         email,
         password,
         role,

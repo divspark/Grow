@@ -9,13 +9,13 @@ const Product = () => {
 
   useEffect(() => {
     // axios.get("http://localhost:5000/api/v1/product/admin-products") // Replace with your backend endpoint
-    const config = {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-      }
-    };
-    axios.get("https://grow-backend-pi.vercel.app/product/admin-products",config)
+    // const config = {
+    //   headers: {
+    //     "Access-Control-Allow-Origin": "*",
+    //     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+    //   }
+    // };
+    axios.get("https://grow-backend-pi.vercel.app/product/admin-products")
       .then(response => {
         setProducts(response.data);
       })

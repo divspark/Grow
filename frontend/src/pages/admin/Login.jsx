@@ -21,13 +21,13 @@ function Login() {
       //   role,
       //   district
       // });
-      const config = {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-        }
-      };
-      const response = await axios.post("https://grow-backend-pi.vercel.app/user/login",config, {
+      // const config = {
+      //   headers: {
+      //     "Access-Control-Allow-Origin": "*",
+      //     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+      //   }
+      // };
+      const response = await axios.post("https://grow-backend-pi.vercel.app/user/login", {
         email,
         password,
         role,

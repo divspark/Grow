@@ -22,13 +22,13 @@ const UploadImage = () => {
       //     'Content-Type': 'multipart/form-data'
       //   }
       // });
-      const config = {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-        }
-      };
-      const response = await axios.post('https://grow-backend-pi.vercel.app/recognize/new',config, formData, {
+      // const config = {
+      //   headers: {
+      //     "Access-Control-Allow-Origin": "*",
+      //     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+      //   }
+      // };
+      const response = await axios.post('https://grow-backend-pi.vercel.app/recognize/new', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

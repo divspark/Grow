@@ -166,7 +166,7 @@ export const getAdminProducts = async (req, res, next) => {
 
 export const getSingleProducts = async (req, res, next) => {
   const product = await Product.findById(req.params.id);
-  return res.status(200).json(product);
+  return res.status(200).json(product).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
 };
 
 // export const getSingleProductsByName = async (req, res, next) => {
