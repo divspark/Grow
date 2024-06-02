@@ -174,7 +174,7 @@ const HomeProducer = () => {
             <div className="myCarousel">
               <h3>Shirley Fultz</h3>
               <h4>Designer</h4>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit beatae amet autem vero commodi facere, tempore expedita!</p>
+              <p>"The freshest produce directly from local farmers – I can taste the difference!"</p>
             </div>
           </div>
 
@@ -183,7 +183,7 @@ const HomeProducer = () => {
             <div className="myCarousel">
               <h3>Daniel Keystone</h3>
               <h4>Designer</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ipsam omnis eveniet soluta non doloremque aut, molestiae!</p>
+              <p>"Convenient, high-quality fruits and vegetables while supporting our community."</p>
             </div>
           </div>
 
@@ -192,7 +192,7 @@ const HomeProducer = () => {
             <div className="myCarousel">
               <h3>Theo Sorel</h3>
               <h4>Designer</h4>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatum culpa. Corrupti impedit iusto, in quis enim eos!</p>
+              <p>"Amazing variety and freshness – I love knowing where my food comes from."</p>
             </div>
           </div>
         </Carousel>
@@ -203,7 +203,7 @@ const HomeProducer = () => {
           <div className="sb__footer-links">
             <div className="sb__footerlink_div1">
               <h3>Why People like Us!</h3>
-              <p>typesetting, remaining essentially unchanged. It was popularised in the 1960s with the like Aldus PageMaker including of Lorem Ipsum.</p>
+              <p>People like us because we connect local producers with consumers, ensuring fresh, high-quality fruits and vegetables. Our marketplace fosters community support and sustainable practices, making every purchase meaningful.</p>
             </div>
             <div className="sb__footerlink_div">
               <h3>Shop Info</h3>
