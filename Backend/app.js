@@ -45,7 +45,6 @@ const corsOrigin ={
   origin:'*', //or whatever port your frontend is using
   credentials:true,
   allowedHeaders: ['Content-Type', 'Authorization'],
-  preflightContinue: false,
   optionSuccessStatus:200
 }
 app.use(cors(corsOrigin));
