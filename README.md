@@ -10,8 +10,8 @@ Payment Processing
 Contributing
 
 # Features
-User Authentication: Secure login and registration for producers, farmers, and consumers.
-Product Listings: Producers and farmers can list their products with detailed descriptions and prices.
+**User Authentication: Secure login and registration for producers, farmers, and consumers.
+**Product Listings: Producers and farmers can list their products with detailed descriptions and prices.
 Voice Recognition: Utilize a basic machine learning model to recognize voice commands for an enhanced user experience.
 Payment Gateway: Secure and seamless transactions using Stripe.
 Sustainability Focus: Connects local producers and consumers to reduce food miles and promote sustainable practices.
