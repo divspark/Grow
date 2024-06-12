@@ -2,21 +2,21 @@
 
 Welcome to Grow, a platform designed to connect producers, farmers, and consumers to reduce food miles, increase sustainability, and reduce pollution. Our project leverages a modern tech stack to achieve these goals, including React for the frontend, Node.js with Express for the backend, MongoDB for the database, and a basic machine learning model for voice recognition. We've also integrated Stripe for secure and seamless payment processing.
 
-Table of Contents
+# Table of Contents
 Features
 Technologies Used
 Installation
 Payment Processing
 Contributing
 
-Features
+# Features
 User Authentication: Secure login and registration for producers, farmers, and consumers.
 Product Listings: Producers and farmers can list their products with detailed descriptions and prices.
 Voice Recognition: Utilize a basic machine learning model to recognize voice commands for an enhanced user experience.
 Payment Gateway: Secure and seamless transactions using Stripe.
 Sustainability Focus: Connects local producers and consumers to reduce food miles and promote sustainable practices.
 
-Technologies Used
+# Technologies Used
 Frontend
 React: A JavaScript library for building user interfaces.
 Redux: State management for React applications.
@@ -28,10 +28,10 @@ Express: Fast, unopinionated, minimalist web framework for Node.js.
 MongoDB: NoSQL database for storing user data and product listings.
 Mongoose: Elegant MongoDB object modeling for Node.js.
 
-Payment Processing
+# Payment Processing
 Stripe: A suite of APIs powering online payment processing.
 
-Installation
+# Installation
 Clone the repository:
 
 bash
@@ -71,10 +71,10 @@ Copy code
 cd frontend
 npm start
 
-Payment Processing
+# Payment Processing
 Stripe is used for secure payment processing. Ensure that your .env file contains the correct Stripe keys. The payment workflow is integrated into the order creation process, providing a seamless experience for users.
 
-Contributing
+# Contributing
 We welcome contributions to the Grow platform! If you would like to contribute, please follow these steps:
 
 Fork the repository.
