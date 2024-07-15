@@ -21,7 +21,7 @@ import speechRoutes from "./routes/speechRoutes.js";
 const app = express();
 const port = process.env.PORT || 4000;
 
-connectDB();
+
 
 // Serve static files from the 'public' directory
 //app.use(express.static("./Controllers/views"));
@@ -60,6 +60,9 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+//Database Connection
+connectDB();
 
 // app.use("/api/v1/user", userRoutes);
 // app.use("/api/v1/product", productRoutes);
