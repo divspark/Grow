@@ -41,7 +41,7 @@ Welcome to Grow, a platform designed to connect producers, farmers, and consumer
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/grow.git
+   git clone https://github.com/divspark/grow.git
    cd grow
    ```
 
