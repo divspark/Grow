@@ -1,6 +1,7 @@
 # Grow
 
-Welcome to Grow, a platform designed to connect producers, farmers, and consumers to reduce food miles, increase sustainability, and reduce pollution. Our project leverages a modern tech stack to achieve these goals, including React for the frontend, Node.js with Express for the backend, MongoDB for the database, and a basic machine learning model for voice recognition. We've also integrated Stripe for secure and seamless payment processing.
+Welcome to Grow – a cutting-edge platform that bridges the gap between producers, farmers, and consumers to promote sustainability, reduce food miles, and lower environmental pollution. Our mission is to create a more eco-friendly food supply chain by connecting local farmers directly with consumers, minimizing the need for long-distance transport, and fostering sustainable practices.
+At Grow, we are committed to promoting sustainable agriculture and empowering local communities, all while offering consumers fresh, local food with reduced environmental impact. Join us in making food sourcing more sustainable, transparent, and efficient!
 
 ## Table of Contents
 
