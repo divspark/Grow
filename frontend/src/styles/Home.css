@@ -542,6 +542,6 @@ hr {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1.5fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1.5fr));
   gap: 10px;
 }

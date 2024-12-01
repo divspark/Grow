@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../../components/consumer/Header";
 import { assets } from "../../assets/consumer/assets";
-// import about from "../../assets/imgab.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProductCard from "../../components/main/ProductCard";
 import {
@@ -18,35 +17,25 @@ import {
   faArrowRightArrowLeft,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
 import AutomatedSlider from "../../components/user/AutomatedSlider ";
 import { Link } from "react-router-dom";
 import useStore from "../../store/useStore";
 
+
 const HomeProducer = () => {
   const addToCart = useStore((state) => state.addToCart);
   const [products, setProducts] = useState([]);
-  //const [testimonials, setTestimonials] = useState([]);
-  //const [error, setError] = useState(null);
+  const [testimonials, setTestimonials] = useState([]);  // State for testimonials
 
   axios.defaults.withCredentials = true;
 
-  // useEffect(() => {
-  //   // Fetch testimonials data from backend API
-  //   axios.get("http://localhost:5000/api/v1/testimonials/all")
-  //     .then(response => {
-  //       // Set fetched testimonials data to state
-  //       setTestimonials(response.data);
-  //     })
-  //     .catch(error => {
-  //       //setError(error.message);
-  //     });
-  // }, []); // Empty dependency array to ensure useEffect runs only once on component mount
-
+  // Fetch products data
   useEffect(() => {
     axios
-      .get("https://grow-backend-pi.vercel.app/product/latest") // Replace with your backend endpoint
+      .get("https://grow-backend-pi.vercel.app/product/latest")
       .then((response) => {
         setProducts(response.data);
       })
@@ -55,9 +44,20 @@ const HomeProducer = () => {
       });
   }, []);
 
+  // Fetch testimonials data
+  useEffect(() => {
+    axios
+      .get("https://grow-backend-pi.vercel.app/testimonials/all") // Fetch testimonials
+      .then((response) => {
+        setTestimonials(response.data); // Store data in state
+      })
+      .catch((error) => {
+        console.error("There was an error fetching the testimonials!", error);
+      });
+  }, []);
+
   return (
     <>
-      {/* <Navbar/> */}
       <AutomatedSlider />
       <Header />
       <Link to="/smartbite" className="img_advise">
@@ -84,13 +84,14 @@ const HomeProducer = () => {
           <button>Read More</button>
         </div>
       </div>
+
       <div className="bestseller-page">
         <h1>Recently Added Items</h1>
         <div className="products-grid">
           {products && products.length > 0 ? (
             products.map((product) => (
               <ProductCard
-                key={product._id} // Use a unique identifier here
+                key={product._id}
                 productId={product._id}
                 name={product.name}
                 price={product.price}
@@ -106,66 +107,7 @@ const HomeProducer = () => {
         </div>
       </div>
 
-      <div className="features">
-        <div className="feature-box">
-          <FontAwesomeIcon icon={faCarSide} className="icon" />
-          <h4>Free Shipping</h4>
-          <p>Free on order above $200</p>
-        </div>
-        <div className="feature-box">
-          <FontAwesomeIcon icon={faUserShield} className="icon" />
-          <h4>Security Payment</h4>
-          <p>100% Security Payment</p>
-        </div>
-        <div className="feature-box">
-          <FontAwesomeIcon icon={faArrowRightArrowLeft} className="icon" />
-          <h4>Easy Exchange</h4>
-          <p>Easy 15 day money guarantee</p>
-        </div>
-        <div className="feature-box">
-          <FontAwesomeIcon icon={faPhone} className="icon" />
-          <h4>24/7 Support</h4>
-          <p>Support at your one call</p>
-        </div>
-      </div>
-
-      {/* <div className="carousel2">
-      <h2>Testimonials</h2>
-      <p>What others have to say about us!</p>
-      <Carousel
-        showArrows={true}
-        infiniteLoop={true}
-        showThumbs={false}
-        showStatus={false}
-        autoPlay={true}
-        interval={2000}
-        renderArrowPrev={(clickHandler, hasPrev, labelPrev) =>
-          hasPrev && (
-              <button type="button" style={{display:"none"}} onClick={clickHandler()} className="arrow arrow-prev">
-                  &#9664;
-              </button>
-          )
-      }
-      renderArrowNext={(clickHandler, hasNext, labelNext) =>
-          hasNext && (
-              <button type="button" style={{display:"none"}} onClick={clickHandler()} className="arrow arrow-next">
-                  &#9654;
-              </button>
-          )
-      }
-      >
-        {testimonials.map((testimonial, index) => (
-          <div key={index}>
-            <img src={testimonial.photo || `http://localhost:5000/${testimonial.photo}`} alt={testimonial.name} />
-            <div className="myCarousel">
-              <h3>{testimonial.name}</h3>
-              <p>{testimonial.message}</p>
-            </div>
-          </div>
-        ))}
-      </Carousel>
-    </div> */}
-
+      {/* Testimonials Section */}
       <div className="carousel2">
         <h2>Testimonials</h2>
         <p>What others have to say about us!</p>
@@ -175,131 +117,29 @@ const HomeProducer = () => {
           showThumbs={false}
           showStatus={false}
           autoPlay={true}
-          interval={6100}
+          interval={3100}
         >
-          <div>
-            <img src={assets.shirley} alt="shirley" />
-            <div className="myCarousel">
-              <h3>Shirley Fultz</h3>
-              <h4>Designer</h4>
-              <p>
-                "The freshest produce directly from local farmers – I can taste
-                the difference!"
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <img src={assets.daniel} alt="daniel" />
-            <div className="myCarousel">
-              <h3>Daniel Keystone</h3>
-              <h4>Designer</h4>
-              <p>
-                "Convenient, high-quality fruits and vegetables while supporting
-                our community."
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <img src={assets.theo} alt="theo" />
-            <div className="myCarousel">
-              <h3>Theo Sorel</h3>
-              <h4>Designer</h4>
-              <p>
-                "Amazing variety and freshness – I love knowing where my food
-                comes from."
-              </p>
-            </div>
-          </div>
+          {testimonials.length > 0 ? (
+            testimonials.map((testimonial, index) => (
+              <div key={index}>
+                <img
+                  src={testimonial.photo || "default-photo.jpg"} // Use default if no photo available
+                  alt={testimonial.name}
+                />
+                <div className="myCarousel">
+                  <h3>{testimonial.name}</h3>
+                  <h4>{testimonial.role}</h4> {/* Assuming role is in the response */}
+                  <p>{testimonial.message}</p>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p>No testimonials available.</p>
+          )}
         </Carousel>
       </div>
 
-      <div className="footer">
-        <div className="sb__footer section__padding">
-          <div className="sb__footer-links">
-            <div className="sb__footerlink_div1">
-              <h3>Why People like Us!</h3>
-              <p>
-                People like us because we connect local producers with
-                consumers, ensuring fresh, high-quality fruits and vegetables.
-                Our marketplace fosters community support and sustainable
-                practices, making every purchase meaningful.
-              </p>
-            </div>
-            <div className="sb__footerlink_div">
-              <h3>Shop Info</h3>
-              <a href="/about">
-                <p>About</p>
-              </a>
-              <a href="/contact">
-                <p>Contact</p>
-              </a>
-              <a href="/privacy">
-                <p>Privacy Policy</p>
-              </a>
-              <a href="/Terms">
-                <p>Terms & Conditions</p>
-              </a>
-              <a href="/faq">
-                <p>FAQ's & Questions</p>
-              </a>
-            </div>
-            <div className="sb__footerlink_div">
-              <h3>Account</h3>
-              <a href="/account">
-                <p>My Account</p>
-              </a>
-              <a href="/shopdetails">
-                <p>Shop Details</p>
-              </a>
-              <a href="/cart">
-                <p>Shopping Cart</p>
-              </a>
-              <a href="/Wishlist">
-                <p>Wishlist</p>
-              </a>
-              <a href="/Order history">
-                <p>Order History</p>
-              </a>
-            </div>
-            <div className="sb__footerlink_div">
-              <h3>Contact</h3>
-              <p>Address: 1429 Netus Rd, NY 48247</p>
-              <p>Email: Example@gmail.com</p>
-              <p>Phone: +0123 4567 8910</p>
-              <p>Payment Accepted</p>
-              <img src={assets.payments} alt="payment" />
-            </div>
-          </div>
-          <hr></hr>
-          <div className="sb__footer-below">
-            <div className="sb__footer-copyright">
-              <p>
-                <FontAwesomeIcon icon={faCopyright} /> 2024.Food_miles.All right
-                reserved.
-              </p>
-            </div>
-            <div className="sb__footer-social">
-              <h3>Follow us on:</h3>
-              <div className="social_media">
-                <p>
-                  <FontAwesomeIcon icon={faFacebook} />
-                </p>
-                <p>
-                  <FontAwesomeIcon icon={faTwitter} />
-                </p>
-                <p>
-                  <FontAwesomeIcon icon={faInstagram} />
-                </p>
-                <p>
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Other sections like footer, features, etc. */}
     </>
   );
 };
