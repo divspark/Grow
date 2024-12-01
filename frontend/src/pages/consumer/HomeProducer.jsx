@@ -20,7 +20,7 @@ import {
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
-import AutomatedSlider from "../../components/user/AutomatedSlider";
+import AutomatedSlider from "../../components/user/AutomatedSlider ";
 import { Link } from "react-router-dom";
 import useStore from "../../store/useStore";
 import { Loader } from "@mantine/core"; // Importing the Loader component
@@ -131,7 +131,7 @@ const HomeProducer = () => {
               testimonials.map((testimonial, index) => (
                 <div key={index}>
                   <img
-                    src={"default-photo.jpg"} // Use default if no photo available
+                    src={assets.shirley} // Use default if no photo available
                     alt={testimonial.name}
                   />
                   <div className="myCarousel">
