@@ -34,8 +34,8 @@ const Product = () => {
           ) : products && products.length > 0 ? ( // Show products if available
             products.map((product) => (
               <ProductCard
-                key={product.id}
-                productId={product.id}
+                key={product._id}
+                productId={product._id}
                 name={product.name}
                 price={product.price}
                 stock={product.stock}
