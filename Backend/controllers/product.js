@@ -104,7 +104,7 @@ export const newProduct = async (req, res, next) => {
     }
 
     const photoPath = photo.path.replace(/\\/g, '/');
-    const photoUrl = `http://localhost:5000/${photoPath}`;
+    const photoUrl = `https://grow-frontend-lime.vercel.app/${photoPath}`;
 
     const newProduct = new Product({
       name,
