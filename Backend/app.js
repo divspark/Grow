@@ -41,21 +41,25 @@ const port = process.env.PORT || 4000;
 
 dotenv.config(); // Load environment variables from .env
 
-const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',') || [];
+const allowedOrigins = (process.env.FRONTEND_URLS || '*').split(',');
 
 // app.use('/uploads', express.static(uploadsPath));
 const corsOptions = {
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true); // Allow the origin
+    // Allow requests with no origin (like mobile apps or Postman)
+    if (!origin) return callback(null, true);
+
+    // Check if the request's origin is in the list of allowed origins
+    if (allowedOrigins.includes('*') || allowedOrigins.includes(origin)) {
+      callback(null, true); // Allow the request
     } else {
-      callback(new Error('Not allowed by CORS')); // Block the origin
+      callback(new Error('Not allowed by CORS')); // Deny the request
     }
   },
-  credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  optionsSuccessStatus: 200,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
+  credentials: true, // Allow credentials (cookies, headers, etc.)
 };
+
 app.use(cors(corsOptions));
 // app.use(cors({
 //     origin: "https://grow-frontend-lime.vercel.app",
