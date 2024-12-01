@@ -46,19 +46,18 @@ const allowedOrigins = (process.env.FRONTEND_URLS || '*').split(',');
 // app.use('/uploads', express.static(uploadsPath));
 const corsOptions = {
   origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps or Postman)
-    if (!origin) return callback(null, true);
-
-    // Check if the request's origin is in the list of allowed origins
-    if (allowedOrigins.includes('*') || allowedOrigins.includes(origin)) {
-      callback(null, true); // Allow the request
+    console.log('Request Origin:', origin);
+    if (!origin || allowedOrigins.includes('*') || allowedOrigins.includes(origin)) {
+      console.log('Allowed Origin:', origin);
+      callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS')); // Deny the request
+      console.error('Blocked Origin:', origin);
+      callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
-  credentials: true, // Allow credentials (cookies, headers, etc.)
+  credentials: true,
 };
+
 
 app.use(cors(corsOptions));
 // app.use(cors({
