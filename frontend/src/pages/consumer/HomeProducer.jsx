@@ -123,7 +123,7 @@ const HomeProducer = () => {
             testimonials.map((testimonial, index) => (
               <div key={index}>
                 <img
-                  src={testimonial.photo || "default-photo.jpg"} // Use default if no photo available
+                  src={"default-photo.jpg"} // Use default if no photo available
                   alt={testimonial.name}
                 />
                 <div className="myCarousel">
