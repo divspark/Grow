@@ -20,15 +20,16 @@ import {
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
-import AutomatedSlider from "../../components/user/AutomatedSlider ";
+import AutomatedSlider from "../../components/user/AutomatedSlider";
 import { Link } from "react-router-dom";
 import useStore from "../../store/useStore";
-
+import { Loader } from "@mantine/core"; // Importing the Loader component
 
 const HomeProducer = () => {
   const addToCart = useStore((state) => state.addToCart);
   const [products, setProducts] = useState([]);
-  const [testimonials, setTestimonials] = useState([]);  // State for testimonials
+  const [testimonials, setTestimonials] = useState([]); // State for testimonials
+  const [loadingTestimonials, setLoadingTestimonials] = useState(true); // Track loading state for testimonials
 
   axios.defaults.withCredentials = true;
 
@@ -50,9 +51,11 @@ const HomeProducer = () => {
       .get("https://grow-backend-pi.vercel.app/testimonials/all") // Fetch testimonials
       .then((response) => {
         setTestimonials(response.data); // Store data in state
+        setLoadingTestimonials(false); // Set loading to false when data is fetched
       })
       .catch((error) => {
         console.error("There was an error fetching the testimonials!", error);
+        setLoadingTestimonials(false); // Set loading to false even if there's an error
       });
   }, []);
 
@@ -111,35 +114,125 @@ const HomeProducer = () => {
       <div className="carousel2">
         <h2>Testimonials</h2>
         <p>What others have to say about us!</p>
-        <Carousel
-          showArrows={true}
-          infiniteLoop={true}
-          showThumbs={false}
-          showStatus={false}
-          autoPlay={true}
-          interval={3100}
-        >
-          {testimonials.length > 0 ? (
-            testimonials.map((testimonial, index) => (
-              <div key={index}>
-                <img
-                  src={"default-photo.jpg"} // Use default if no photo available
-                  alt={testimonial.name}
-                />
-                <div className="myCarousel">
-                  <h3>{testimonial.name}</h3>
-                  <h4>{testimonial.role}</h4> {/* Assuming role is in the response */}
-                  <p>{testimonial.message}</p>
+        
+        {/* Show Loader if testimonials are still being fetched */}
+        {loadingTestimonials ? (
+          <Loader variant="bars" size="lg" />
+        ) : (
+          <Carousel
+            showArrows={true}
+            infiniteLoop={true}
+            showThumbs={false}
+            showStatus={false}
+            autoPlay={true}
+            interval={3100}
+          >
+            {testimonials.length > 0 ? (
+              testimonials.map((testimonial, index) => (
+                <div key={index}>
+                  <img
+                    src={"default-photo.jpg"} // Use default if no photo available
+                    alt={testimonial.name}
+                  />
+                  <div className="myCarousel">
+                    <h3>{testimonial.name}</h3>
+                    <h4>{testimonial.role}</h4> {/* Assuming role is in the response */}
+                    <p>{testimonial.message}</p>
+                  </div>
                 </div>
-              </div>
-            ))
-          ) : (
-            <p>No testimonials available.</p>
-          )}
-        </Carousel>
+              ))
+            ) : (
+              <p>No testimonials available.</p>
+            )}
+          </Carousel>
+        )}
       </div>
 
-      {/* Other sections like footer, features, etc. */}
+      <div className="footer">
+        <div className="sb__footer section__padding">
+          <div className="sb__footer-links">
+            <div className="sb__footerlink_div1">
+              <h3>Why People like Us!</h3>
+              <p>
+                People like us because we connect local producers with
+                consumers, ensuring fresh, high-quality fruits and vegetables.
+                Our marketplace fosters community support and sustainable
+                practices, making every purchase meaningful.
+              </p>
+            </div>
+            <div className="sb__footerlink_div">
+              <h3>Shop Info</h3>
+              <a href="/about">
+                <p>About</p>
+              </a>
+              <a href="/contact">
+                <p>Contact</p>
+              </a>
+              <a href="/privacy">
+                <p>Privacy Policy</p>
+              </a>
+              <a href="/Terms">
+                <p>Terms & Conditions</p>
+              </a>
+              <a href="/faq">
+                <p>FAQ's & Questions</p>
+              </a>
+            </div>
+            <div className="sb__footerlink_div">
+              <h3>Account</h3>
+              <a href="/account">
+                <p>My Account</p>
+              </a>
+              <a href="/shopdetails">
+                <p>Shop Details</p>
+              </a>
+              <a href="/cart">
+                <p>Shopping Cart</p>
+              </a>
+              <a href="/Wishlist">
+                <p>Wishlist</p>
+              </a>
+              <a href="/Order history">
+                <p>Order History</p>
+              </a>
+            </div>
+            <div className="sb__footerlink_div">
+              <h3>Contact</h3>
+              <p>Address: 1429 Netus Rd, NY 48247</p>
+              <p>Email: Example@gmail.com</p>
+              <p>Phone: +0123 4567 8910</p>
+              <p>Payment Accepted</p>
+              <img src={assets.payments} alt="payment" />
+            </div>
+          </div>
+          <hr />
+          <div className="sb__footer-below">
+            <div className="sb__footer-copyright">
+              <p>
+                <FontAwesomeIcon icon={faCopyright} /> 2024.Food_miles.All right
+                reserved.
+              </p>
+            </div>
+            <div className="sb__footer-social">
+              <h3>Follow us on:</h3>
+              <div className="social_media">
+                <p>
+                  <FontAwesomeIcon icon={faFacebook} />
+                </p>
+                <p>
+                  <FontAwesomeIcon icon={faTwitter} />
+                </p>
+                <p>
+                  <FontAwesomeIcon icon={faInstagram} />
+                </p>
+                <p>
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
