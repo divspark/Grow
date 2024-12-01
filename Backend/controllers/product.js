@@ -82,7 +82,11 @@ export const getSingleProducts = async (req, res, next) => {
 export const getSingleProductsByName = async (req, res, next) => {
   try {
     const { name } = req.params;
-    const product = await Product.findOne({ name });
+
+    // Use a case-insensitive regex search to find products with names containing 'name'
+    const product = await Product.findOne({
+      name: { $regex: name, $options: 'i' }  // 'i' makes it case-insensitive
+    });
 
     if (!product) {
       return res.status(404).json({ message: "Product not found" });
@@ -96,6 +100,7 @@ export const getSingleProductsByName = async (req, res, next) => {
   }
 };
 
+
 export const getProductsByDistrict = async (req, res) => {
   const { district } = req.params;
 
@@ -106,10 +111,14 @@ export const getProductsByDistrict = async (req, res) => {
         .json({ error: "District query parameter is required" });
     }
 
-    const products = await Product.find({ district });
+    // Use case-insensitive regex search for district
+    const products = await Product.find({
+      district: { $regex: district, $options: 'i' }  // Case-insensitive search
+    });
 
     return res.status(200).json(products);
   } catch (error) {
-    return res.status(500).json({ error: "Failed to fetch products" });
+    return res.status(500).json({ error: "Failed to fetch products", message: error.message });
   }
 };
+
