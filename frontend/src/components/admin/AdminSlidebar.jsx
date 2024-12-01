@@ -27,26 +27,26 @@ const DivOne = () => (
   </div>
 );
 
-const DivTwo = () => (
-  <div>
-    <h5>Charts</h5>
-    <ul>
-      <Li text="Bar" url="/admin/chart/bar" Icon={AiOutlineBarChart} />
-      <Li text="Pie" url="/admin/chart/pie" Icon={AiOutlinePieChart} />
-      <Li text="Line" url="/admin/chart/line" Icon={AiOutlineLineChart} />
-    </ul>
-  </div>
-);
+// const DivTwo = () => (
+//   <div>
+//     <h5>Charts</h5>
+//     <ul>
+//       <Li text="Bar" url="/admin/chart/bar" Icon={AiOutlineBarChart} />
+//       <Li text="Pie" url="/admin/chart/pie" Icon={AiOutlinePieChart} />
+//       <Li text="Line" url="/admin/chart/line" Icon={AiOutlineLineChart} />
+//     </ul>
+//   </div>
+// );
 
-const DivThree = () => (
-  <div>
-    <h5>Apps</h5>
-    <ul>
-      <Li text="Coupon" url="/admin/app/coupon" Icon={RiCoupon3Fill} />
-      <Li text="Snake Game" url="/admin/app/snake-game" Icon={IoLogoGameControllerB} />
-    </ul>
-  </div>
-);
+// const DivThree = () => (
+//   <div>
+//     <h5>Apps</h5>
+//     <ul>
+//       <Li text="Coupon" url="/admin/app/coupon" Icon={RiCoupon3Fill} />
+//       <Li text="Snake Game" url="/admin/app/snake-game" Icon={IoLogoGameControllerB} />
+//     </ul>
+//   </div>
+// );
 
 const Li = ({ url, text, Icon }) => {
   const location = useLocation();

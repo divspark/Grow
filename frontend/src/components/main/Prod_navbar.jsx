@@ -9,7 +9,6 @@ const Prod_navbar = () => {
     padding: '10px 20px',
     backgroundColor: '#dfff8d',
     borderBottom: '1px solid #e7e7e7',
-    backgroundColor: '#62a351'
   };
 
   const logoStyle = {

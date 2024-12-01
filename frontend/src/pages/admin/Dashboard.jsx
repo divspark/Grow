@@ -4,10 +4,10 @@ import AdminSidebar from "../../components/admin/AdminSlidebar";
 import { FaRegBell } from "react-icons/fa";
 import UserImg from "../../assets/admin/userpic.png";
 import { HiTrendingDown, HiTrendingUp } from "react-icons/hi";
-import data from "../../assets/admin/data.json";
-import { BarChart, DoughnutChart } from "../../components/admin/Chart";
-import { BiMaleFemale } from "react-icons/bi";
-import Table from "../../components/admin/DashboardTable";
+// import data from "../../assets/admin/data.json";
+import { BarChart } from "../../components/admin/Chart";
+// import { BiMaleFemale } from "react-icons/bi";
+// import Table from "../../components/admin/DashboardTable";
 import '../../styles/admin/App.scss'
 
 const Dashboard = () => {
@@ -131,19 +131,19 @@ const WidgetItem = ({ heading, value, amount = false, percent, color }) => (
   </article>
 );
 
-const CategoryItem = ({ color, value, heading }) => (
-  <div className="category-item">
-    <h5>{heading}</h5>
-    <div>
-      <div
-        style={{
-          backgroundColor: color,
-          width: `${value}%`,
-        }}
-      ></div>
-    </div>
-    <span>{value}%</span>
-  </div>
-);
+// const CategoryItem = ({ color, value, heading }) => (
+//   <div className="category-item">
+//     <h5>{heading}</h5>
+//     <div>
+//       <div
+//         style={{
+//           backgroundColor: color,
+//           width: `${value}%`,
+//         }}
+//       ></div>
+//     </div>
+//     <span>{value}%</span>
+//   </div>
+// );
 
 export default Dashboard;
