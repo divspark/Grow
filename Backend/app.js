@@ -13,6 +13,7 @@ import RecipeRoutes from "./routes/RecipeRoutes.js";
 //import RecognizeRoutes from "./routes/RecognizeRoute.js";
 //import uploadRoutes from "./routes/UploadRoute.js";
 import speechRoutes from "./routes/speechRoutes.js";
+import dotenv from 'dotenv';
 // import { fileURLToPath } from 'url';
 // import path from 'path';
 
@@ -38,16 +39,24 @@ const port = process.env.PORT || 4000;
 // const currentDirPath = path.dirname(fileURLToPath(currentFileUrl)); // Use path directly
 // const uploadsPath = path.join(currentDirPath, 'uploads');
 
+dotenv.config(); // Load environment variables from .env
 
+const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',') || [];
 
 // app.use('/uploads', express.static(uploadsPath));
-const corsOrigin ={
-  origin:'https://grow-frontend-lime.vercel.app', //or whatever port your frontend is using
-  credentials:true,
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); // Allow the origin
+    } else {
+      callback(new Error('Not allowed by CORS')); // Block the origin
+    }
+  },
+  credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization'],
-  optionSuccessStatus:200
-}
-app.use(cors(corsOrigin));
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 // app.use(cors({
 //     origin: "https://grow-frontend-lime.vercel.app",
 //     methods: ["GET", "POST","DELETE"],
