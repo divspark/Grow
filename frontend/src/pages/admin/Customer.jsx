@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaTrash } from "react-icons/fa";
 import AdminSidebar from "../../components/admin/AdminSlidebar";
 import TableHOC from "../../components/admin/TableHOC";
-import '../../styles/admin/App.scss';
+import "../../styles/admin/App.scss";
 
 const columns = [
   {
@@ -37,13 +37,7 @@ const defaultAvatars = [
   "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b367acac-2ef7-42e6-a6cc-2264a7212b61/dg9waic-c8d98f61-c2c4-47cc-9302-ff4a1f1f9ce4.jpg/v1/fill/w_921,h_867,q_70,strp/anime_boy_pfp_art_by_hrplusdesign_dg9waic-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTY0IiwicGF0aCI6IlwvZlwvYjM2N2FjYWMtMmVmNy00MmU2LWE2Y2MtMjI2NGE3MjEyYjYxXC9kZzl3YWljLWM4ZDk4ZjYxLWMyYzQtNDdjYy05MzAyLWZmNGExZjFmOWNlNC5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.jL-OTjL8P1ZV2zCEJkMh0mW0XjX45Xvx9bNrwxF25XM",
 ];
 
-const defaultNames = [
-  "Shyam",
-  "Kshitiz",
-  "Aman",
-  "Rahul",
-  "Vishesh"
-];
+const defaultNames = ["Shyam", "Kshitiz", "Aman", "Rahul", "Vishesh"];
 
 const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
@@ -51,9 +45,10 @@ const Customers = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('https://grow-backend-pi.vercel.app/user/all')
-      .then(response => {
-        const fetchedData = response.data.map(customer => ({
+    axios
+      .get("https://grow-backend-pi.vercel.app/user/all")
+      .then((response) => {
+        const fetchedData = response.data.map((customer) => ({
           avatar: (
             <img
               style={{ borderRadius: "50%" }}
@@ -73,30 +68,32 @@ const Customers = () => {
         }));
         setData(fetchedData);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("There was an error fetching the customers!", error);
       });
   }, []);
 
   const handleDelete = (email) => {
-    axios.delete(`https://grow-backend-pi.vercel.app/user/email/${email}`)
+    axios
+      .delete(`https://grow-backend-pi.vercel.app/user/email/${email}`)
       .then(() => {
-        setData(prevData => prevData.filter(customer => customer.email !== email));
+        setData((prevData) =>
+          prevData.filter((customer) => customer.email !== email)
+        );
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("There was an error deleting the customer!", error);
       });
   };
 
-  const Table = useCallback(TableHOC(columns, data, "dashboard-product-box", "Customers"), [data]);
+  const Table = TableHOC(columns, data, "dashboard-product-box", "Customers");
 
   return (
     <div className="admin-container">
       <AdminSidebar />
-      <main>{Table()}</main>
+      <main>{Table}</main>
     </div>
   );
 };
 
 export default Customers;
-

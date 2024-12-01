@@ -5,8 +5,19 @@ import { assets } from "../../assets/consumer/assets";
 // import about from "../../assets/imgab.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProductCard from "../../components/main/ProductCard";
-import { faFacebook, faTwitter, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faCopyright, faCarSide, faUserShield, faArrowRightArrowLeft, faPhone } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faCopyright,
+  faCarSide,
+  faUserShield,
+  faArrowRightArrowLeft,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import AutomatedSlider from "../../components/user/AutomatedSlider ";
@@ -33,19 +44,16 @@ const HomeProducer = () => {
   //     });
   // }, []); // Empty dependency array to ensure useEffect runs only once on component mount
 
-
   useEffect(() => {
-    
-    axios.get("https://grow-backend-pi.vercel.app/product/latest") // Replace with your backend endpoint
-      .then(response => {
+    axios
+      .get("https://grow-backend-pi.vercel.app/product/latest") // Replace with your backend endpoint
+      .then((response) => {
         setProducts(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("There was an error fetching the products!", error);
       });
   }, []);
-
-
 
   return (
     <>
@@ -63,7 +71,16 @@ const HomeProducer = () => {
         <div className="about-content">
           <h3>-ORGANIC STORE-</h3>
           <h2>About us</h2>
-          <p>We're committed to shrinking food miles by linking consumers and producers, strengthening local economies, and promoting sustainability. Through our platform, consumers access locally sourced goods directly from producers, fostering a deeper connection to food origins. By cutting out middlemen, we reduce environmental impact and support small-scale farmers. Join us in our mission to build a more resilient, community-driven food system for a healthier planet.</p>
+          <p>
+            We're committed to shrinking food miles by linking consumers and
+            producers, strengthening local economies, and promoting
+            sustainability. Through our platform, consumers access locally
+            sourced goods directly from producers, fostering a deeper connection
+            to food origins. By cutting out middlemen, we reduce environmental
+            impact and support small-scale farmers. Join us in our mission to
+            build a more resilient, community-driven food system for a healthier
+            planet.
+          </p>
           <button>Read More</button>
         </div>
       </div>
@@ -71,9 +88,9 @@ const HomeProducer = () => {
         <h1>Recently Added Items</h1>
         <div className="products-grid">
           {products && products.length > 0 ? (
-            products.map(product => (
+            products.map((product) => (
               <ProductCard
-                key={product.id}
+                key={product._id} // Use a unique identifier here
                 productId={product._id}
                 name={product.name}
                 price={product.price}
@@ -165,7 +182,10 @@ const HomeProducer = () => {
             <div className="myCarousel">
               <h3>Shirley Fultz</h3>
               <h4>Designer</h4>
-              <p>"The freshest produce directly from local farmers – I can taste the difference!"</p>
+              <p>
+                "The freshest produce directly from local farmers – I can taste
+                the difference!"
+              </p>
             </div>
           </div>
 
@@ -174,7 +194,10 @@ const HomeProducer = () => {
             <div className="myCarousel">
               <h3>Daniel Keystone</h3>
               <h4>Designer</h4>
-              <p>"Convenient, high-quality fruits and vegetables while supporting our community."</p>
+              <p>
+                "Convenient, high-quality fruits and vegetables while supporting
+                our community."
+              </p>
             </div>
           </div>
 
@@ -183,7 +206,10 @@ const HomeProducer = () => {
             <div className="myCarousel">
               <h3>Theo Sorel</h3>
               <h4>Designer</h4>
-              <p>"Amazing variety and freshness – I love knowing where my food comes from."</p>
+              <p>
+                "Amazing variety and freshness – I love knowing where my food
+                comes from."
+              </p>
             </div>
           </div>
         </Carousel>
@@ -194,23 +220,48 @@ const HomeProducer = () => {
           <div className="sb__footer-links">
             <div className="sb__footerlink_div1">
               <h3>Why People like Us!</h3>
-              <p>People like us because we connect local producers with consumers, ensuring fresh, high-quality fruits and vegetables. Our marketplace fosters community support and sustainable practices, making every purchase meaningful.</p>
+              <p>
+                People like us because we connect local producers with
+                consumers, ensuring fresh, high-quality fruits and vegetables.
+                Our marketplace fosters community support and sustainable
+                practices, making every purchase meaningful.
+              </p>
             </div>
             <div className="sb__footerlink_div">
               <h3>Shop Info</h3>
-              <a href="/about"><p>About</p></a>
-              <a href="/contact"><p>Contact</p></a>
-              <a href="/privacy"><p>Privacy Policy</p></a>
-              <a href="/Terms"><p>Terms & Conditions</p></a>
-              <a href="/faq"><p>FAQ's & Questions</p></a>
+              <a href="/about">
+                <p>About</p>
+              </a>
+              <a href="/contact">
+                <p>Contact</p>
+              </a>
+              <a href="/privacy">
+                <p>Privacy Policy</p>
+              </a>
+              <a href="/Terms">
+                <p>Terms & Conditions</p>
+              </a>
+              <a href="/faq">
+                <p>FAQ's & Questions</p>
+              </a>
             </div>
             <div className="sb__footerlink_div">
               <h3>Account</h3>
-              <a href="/account"><p>My Account</p></a>
-              <a href="/shopdetails"><p>Shop Details</p></a>
-              <a href="/cart"><p>Shopping Cart</p></a>
-              <a href="/Wishlist"><p>Wishlist</p></a>
-              <a href="/Order history"><p>Order History</p></a>
+              <a href="/account">
+                <p>My Account</p>
+              </a>
+              <a href="/shopdetails">
+                <p>Shop Details</p>
+              </a>
+              <a href="/cart">
+                <p>Shopping Cart</p>
+              </a>
+              <a href="/Wishlist">
+                <p>Wishlist</p>
+              </a>
+              <a href="/Order history">
+                <p>Order History</p>
+              </a>
             </div>
             <div className="sb__footerlink_div">
               <h3>Contact</h3>
@@ -225,8 +276,8 @@ const HomeProducer = () => {
           <div className="sb__footer-below">
             <div className="sb__footer-copyright">
               <p>
-                <FontAwesomeIcon icon={faCopyright} /> 2024.Food_miles.All
-                right reserved.
+                <FontAwesomeIcon icon={faCopyright} /> 2024.Food_miles.All right
+                reserved.
               </p>
             </div>
             <div className="sb__footer-social">

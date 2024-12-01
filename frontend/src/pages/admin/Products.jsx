@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
 import axios from "axios";
@@ -45,15 +45,12 @@ const Products = () => {
       });
   }, []);
 
-  const Table = useCallback(
-    TableHOC(columns, data, "dashboard-product-box", "Products"),
-    [data]
-  );
+  const Table = TableHOC(columns, data, "dashboard-product-box", "Products");
 
   return (
     <div className="admin-container">
       <AdminSidebar />
-      <main>{Table()}</main>
+      <main>{Table}</main>
       <Link to="/admin/products/new" className="create-product-btn">
         <FaPlus />
       </Link>
