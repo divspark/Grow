@@ -4,7 +4,6 @@ import User from "../models/userModel.js";
 const secretKey = "Dabbemein4098";
 
 export const HandleUserLogin = async (req, res) => {
-  // const { email, password, role,district,state } = req.body;
   const { email, password, role,district } = req.body;
 
   // Check if user exists with provided email, password, and role
@@ -47,51 +46,6 @@ export const HandleUserLogin = async (req, res) => {
 };
 
 
-
-
-// import jwt from "jsonwebtoken";
-// import  User  from "../models/userModel.js";
-
-// const secretKey = "Dabbemein4098";
-
-// export const HandleUserLogin = async (req, res) => {
-//   const { email, password } = req.body;
-//   const user = await User.findOne({ email, password, role });
-//   if (!user) {
-//     return res.status(401).json({ message: "Invalid Email or Password or User Role" });
-//   }
-//   const token = req.cookies.token;
-//   if (!token) {
-//     return res.status(401).json({ message: "Unauthorized" });
-//   }
-//   // Authenticate token
-//   jwt.verify(token, secretKey, (err, decoded) => {
-//     if (err) {
-//       return res.status(403).json({ message: "Invalid token" });
-//     }
-//     // Token is valid, user is authenticated
-//     const { id, role } = req.user;
-//     if (req.body.role === 'consumer') {
-//       res.send('Welcome to Consumer Dashboard');
-//       // res.redirect(`http://localhost:3001/`);
-//     }
-//     else if (req.body.role === 'producer') {
-//       res.send('Welcome to Producer Dashboard');
-//       // res.redirect(`http://localhost:3001/producer/:${id}`);
-//     } else {
-//       res.status(403).send('Access denied.');
-//     }
-//   });
-  
-//   console.log("user authentication successfull");
-// };
-
-// import jwt from "jsonwebtoken";
-// import bcrypt from "bcryptjs";
-// import User from "../models/userModel.js";
-
-// const secretKey = "Dabbemein4098";
-
 export const HandleUserSignup = async (req, res) => {
   const { email, password, role,district,state } = req.body;
 
@@ -101,9 +55,6 @@ export const HandleUserSignup = async (req, res) => {
     if (existingUser) {
       return res.status(400).json({ message: "User already exists" });
     }
-
-    // Hash the password before saving the user
-    // const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create a new user with the hashed password
     const newUser = new User({ email, password, role,district,state });
@@ -136,23 +87,6 @@ export const GetAllUser = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
-// export const getAdminProducts = async (req, res, next) => {
-//   try {
-//     const products = await Product.find({});
-//     // Assuming each product has an image field that contains the filename
-//     // const updatedProducts = products.map(product => {
-//     //   return {
-//     //     ...product._doc, // Spread the original product object
-//     //     photo: ` http://localhost:5000/${product.photoPath}` // Append image URL
-//     //   };
-//     // });
-
-//     return res.status(200).json(products);
-//   } catch (error) {
-//     return res.status(500).json({ error: 'Failed to fetch products' });
-//   }
-// };
 
 export const deleteUserByEmail = async (req, res) => {
   const { email } = req.params;

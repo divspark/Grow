@@ -3,7 +3,6 @@ import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
-//import { config } from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
@@ -62,14 +61,7 @@ const corsOptions = {
 
 
 app.use(cors(corsOptions));
-// app.use(cors({
-//     origin: "https://grow-frontend-lime.vercel.app",
-//     methods: ["GET", "POST","DELETE"],
-//     optionsSuccessStatus: 200,
-//     credentials: true,
-//     allowedHeaders: ['Content-Type', 'Authorization'], 
 
-// }));
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -78,15 +70,6 @@ app.use(cookieParser());
 //Database Connection
 connectDB();
 
-// app.use("/api/v1/user", userRoutes);
-// app.use("/api/v1/product", productRoutes);
-// app.use("/api/v1/order", orderRoutes);
-// app.use("/api/v1/testimonials", TestimonialsRoutes);
-// app.use("/api/v1/payment", paymentRoutes);
-// app.use("/api/v1/recipe", RecipeRoutes);
-// app.use("/api/v1/recognize", RecognizeRoutes);
-// app.use("/api/v1/upload", uploadRoutes);
-// app.use("/api/v1/speech", speechRoutes);
 
 app.get("/", (req, res) => {
   

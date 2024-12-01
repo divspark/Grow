@@ -1,5 +1,5 @@
 
-import Testimonial from '../models/Testimonials.js'; // Adjust the path as necessary
+import Testimonial from '../models/Testimonials.js'; 
 
 
 // Add a new testimonial
