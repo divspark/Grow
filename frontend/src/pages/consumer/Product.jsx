@@ -1,53 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Loader, Center } from '@mantine/core'; // Import Mantine Loader
 import ProductCard from '../../components/main/ProductCard';
-import useStore from '../../store/useStore'
+import useStore from '../../store/useStore';
 
 const Product = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true); // Loading state
   const addToCart = useStore((state) => state.addToCart);
 
   useEffect(() => {
-    // axios.get("http://localhost:5000/api/v1/product/admin-products") // Replace with your backend endpoint
-    // const config = {
-    //   headers: {
-    //     "Access-Control-Allow-Origin": "*",
-    //     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-    //   }
-    // };
-    axios.get("https://grow-backend-pi.vercel.app/product/admin-products")
-      .then(response => {
+    axios
+      .get("https://grow-backend-pi.vercel.app/product/admin-products")
+      .then((response) => {
         setProducts(response.data);
+        setLoading(false); // Stop loading after products are fetched
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("There was an error fetching the products!", error);
+        setLoading(false); // Stop loading in case of an error
       });
   }, []);
-
-  // const addToCart = (productId) => {
-  //   // Implement the logic for adding to cart
-  //   console.log(`Adding product ${productId} to cart`);
-  // };
 
   return (
     <div>
       <div className="bestseller-page">
         <h1>Top Items Near You</h1>
         <div className="products-grid">
-          {/* {error ? (
-            <p>{error}</p>
-          ) : (
-            products.length > 0 ? (
-              
-              ))
-            ) : (
-              <p>Loading products...</p>
-            )
-          )} */}
-
-
-{products && products.length > 0 ? (
-            products.map(product => (
+          {loading ? ( // Show Loader while loading
+            <Center>
+              <Loader size="lg" />
+            </Center>
+          ) : products && products.length > 0 ? ( // Show products if available
+            products.map((product) => (
               <ProductCard
                 key={product.id}
                 productId={product.id}
@@ -60,7 +45,7 @@ const Product = () => {
               />
             ))
           ) : (
-            <p>No products available.</p>
+            <p>No products available.</p> 
           )}
         </div>
       </div>
