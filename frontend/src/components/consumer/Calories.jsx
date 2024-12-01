@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import RecipeCard from './RecipeCard';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import RecipeCard from "./RecipeCard";
+import axios from "axios";
+import { Loader, Center } from "@mantine/core";
 
 const Calories = ({ query }) => {
   const [recipes, setRecipes] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true); // Add loading state
 
   useEffect(() => {
     const fetchRecipes = async () => {
+      setLoading(true); // Set loading to true before fetching
       try {
-        // const config = {
-        //   headers: {
-        //     "Access-Control-Allow-Origin": "*",
-        //     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-        //   }
-        // };
-        // const response = await axios.get(`http://localhost:5000/api/v1/recipe/recipes?calories=${query}`);
-        const response = await axios.get(`https://grow-backend-pi.vercel.app/recipe/recipes?calories=${query}`);
+        const response = await axios.get(
+          `https://grow-backend-pi.vercel.app/recipe/recipes?calories=${query}`
+        );
         setRecipes(response.data || []); // Ensure recipes is an array
+        setError(null); // Clear any previous error
       } catch (err) {
-        setError('Failed to fetch recipes');
+        setError("Failed to fetch recipes");
         console.error(err);
+      } finally {
+        setLoading(false); // Set loading to false after fetching
       }
     };
 
@@ -31,17 +32,21 @@ const Calories = ({ query }) => {
     <div className="recipe-list">
       <h1>Recipe List</h1>
       <div className="recipe-card-list">
-        {error ? (
-          <p>{error}</p>
+        {loading ? ( // Show loader while loading
+          <Center>
+            <Loader size="lg" />
+          </Center>
+        ) : error ? (
+          <p>{error}</p> // Show error if fetch fails
         ) : recipes.length > 0 ? (
-          recipes.map(recipe => (
+          recipes.map((recipe) => (
             <RecipeCard
               key={recipe.id}
               recipe={recipe} // Pass the recipe object directly
             />
           ))
         ) : (
-          <p>No recipes found</p>
+          <p>No recipes found</p> // Show message if no recipes
         )}
       </div>
     </div>
@@ -49,57 +54,3 @@ const Calories = ({ query }) => {
 };
 
 export default Calories;
-
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import RecipeCard from './RecipeCard';
-
-// const RecipeList = () => {
-//   const [recipes, setRecipes] = useState([]);
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     const fetchRecipes = async () => {
-//       try {
-//         const response = await axios.get('http://localhost:3000/api/v1/recipe/recipes?q=onion');
-//         setRecipes(response.data|| []); // Ensure recipes is an array
-//       } catch (err) {
-//         setError('Failed to fetch recipes');
-//         console.error(err);
-//       }
-//     };
-
-//     fetchRecipes();
-//   }, []);
-
-//   return (
-//     <div className="recipe-list">
-//       <h1>Recipe List</h1>
-//       <div className="recipecard_list">
-
-      
-//       {error ? (
-//         <p>{error}</p>
-//       ) : (
-//         recipes.length > 0 ? (
-//           recipes.map(recipe => (
-//             <RecipeCard
-//               key={recipe.id}
-//               name={recipe.name}
-//               image={recipe.image}
-//               url={recipe.url}
-//               ingredients={recipe.ingredients}
-//             //   nutrients={recipe.nutrients}
-//               calories={recipe.calories}
-//             />
-//           ))
-//         ) : (
-//           <p>Loading recipes...</p>
-//         )
-//       )}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default RecipeList;

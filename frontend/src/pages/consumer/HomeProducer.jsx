@@ -35,16 +35,7 @@ const HomeProducer = () => {
 
 
   useEffect(() => {
-    // axios.get("http://localhost:5000/api/v1/product/latest") // Replace with your backend endpoint
-    // const config = {
-    //   headers: {
-    //     "Access-Control-Allow-Origin": "*",
-    //     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-    //     "Access-Control-Allow-Headers": "Content-Type, Authorization",
-    //     "Access-Control-Allow-Credentials": true,
-    //     "Content-Type": "application/json"
-    //   }
-    // };
+    
     axios.get("https://grow-backend-pi.vercel.app/product/latest") // Replace with your backend endpoint
       .then(response => {
         setProducts(response.data);
