@@ -10,7 +10,7 @@ export const newTest = async (req, res) => {
   try {
     const newTestimonial = new Testimonial({ name, message, photo: photoPath });
     await newTestimonial.save();
-    res.status(201).json(newTestimonial).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
+    res.status(201).json(newTestimonial);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -20,7 +20,7 @@ export const newTest = async (req, res) => {
 export const allTest = async (req, res) => {
   try {
     const testimonials = await Testimonial.find();
-    res.status(200).json(testimonials).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
+    res.status(200).json(testimonials);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

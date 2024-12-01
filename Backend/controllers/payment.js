@@ -33,7 +33,7 @@ export const createPaymentIntent = async(req, res) => {
         //     clientSecret: paymentIntent.client_secret,
         // });
 
-        return res.status(201).json({ clientSecret: paymentIntent.client_secret}).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
+        return res.status(201).json({ clientSecret: paymentIntent.client_secret});
 
     } catch (error) {
         // Handle any errors
@@ -64,7 +64,7 @@ export const updateOrderAfterPayment = async (req, res) => {
       return res.status(404).send("Order not found");
     }
 
-    res.status(200).send("Payment processed successfully").setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
+    res.status(200).send("Payment processed successfully");
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");

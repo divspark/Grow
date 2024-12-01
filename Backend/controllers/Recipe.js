@@ -51,7 +51,7 @@ export const getRecipes = async (req, res) => {
       }));
   
       // Send recipes as JSON response
-      res.json(recipes).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
+      res.json(recipes);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Internal Server Error' });

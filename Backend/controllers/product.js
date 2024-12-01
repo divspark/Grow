@@ -131,7 +131,7 @@ export const getLatestProducts = async (req, res, next) => {
   // res.setHeader("Access-Control-Allow-Origin", "*")
   // res.setHeader("Access-Control-Allow-Credentials", "true");
   
-  return res.status(200).json(products).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
+  return res.status(200).json(products);
 };
 
 export const getAllCategories = async (req, res, next) => {
@@ -158,7 +158,7 @@ export const getAdminProducts = async (req, res, next) => {
     //   };
     // });
 
-    return res.status(200).json(products).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
+    return res.status(200).json(products);
   } catch (error) {
     return res.status(500).json({ error: 'Failed to fetch products' });
   }
@@ -166,7 +166,7 @@ export const getAdminProducts = async (req, res, next) => {
 
 export const getSingleProducts = async (req, res, next) => {
   const product = await Product.findById(req.params.id);
-  return res.status(200).json(product).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
+  return res.status(200).json(product);
 };
 
 // export const getSingleProductsByName = async (req, res, next) => {
@@ -186,7 +186,7 @@ export const getSingleProductsByName = async (req, res, next) => {
       return res.status(404).json({ message: "Product not found" });
     }
 
-    return res.status(200).json( product ).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
+    return res.status(200).json( product );
   } catch (error) {
     return res.status(500).json({ message: "Server error", error: error.message });
   }
@@ -214,7 +214,7 @@ export const getProductsByDistrict = async (req, res) => {
     //   imageUrl: `${req.protocol}://${req.get('host')}/uploads/${product.image}`.replace(/\\/g, '/')
     // }));
 
-    return res.status(200).json(products).setHeader("Access-Control-Allow-Origin", "*").setHeader("Access-Control-Allow-Credentials", "true");
+    return res.status(200).json(products);
   } catch (error) {
     return res.status(500).json({ error: 'Failed to fetch products' });
   }
