@@ -9,6 +9,7 @@ import ConditionalNavbar from './components/consumer/ConditionalNavbar.jsx';
 //import Customers from './pages/admin/Customers.jsx';
 //import Customer from './pages/admin/Customer.jsx';
 //import Products from './pages/admin/Products.jsx';
+import { Loader, Center } from '@mantine/core';
 
 
 library.add(fas, faTwitter, faFontAwesome);
@@ -44,7 +45,13 @@ const App = () => {
   return (
     <Router>
       <ConditionalNavbar />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <Center style={{ height: '100vh' }}>
+            <Loader size="xl" color="blue" variant="dots" />
+          </Center>
+        }
+      >
         <Routes>
           {/* Producer */}
           <Route exact path="/producer" element={<Home />} />
