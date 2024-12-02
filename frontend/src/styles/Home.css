@@ -63,8 +63,8 @@
   color: white;
 }
 .sb__footerlink_div img {
-  height: 8vw;
-  width: 12vw;
+  height: 4vw;
+  width: 20vw;
 }
 .a {
   color: rgb(175, 175, 175);
@@ -106,7 +106,7 @@
 }
 .sb__footerlink_div p {
   font-size: 17px;
-  line-height: 15px;
+  line-height: 6px;
   margin: 1rem 0;
   cursor: pointer;
 }
@@ -123,6 +123,7 @@
   flex-direction: row;
   justify-content: space-between;
   margin-top: 0.2rem;
+  padding: 10px;
 }
 hr {
   color: white !important;
