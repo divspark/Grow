@@ -36,10 +36,11 @@
   .advisory form input,
   .advisory form select {
     width: 100%;
-    padding: 10px;
+    padding: 10px 70px 10px 30px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin-top: 10px;
   }
   
   .advisory form button {

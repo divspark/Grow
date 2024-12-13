@@ -12,10 +12,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faCopyright,
-  faCarSide,
-  faUserShield,
-  faArrowRightArrowLeft,
-  faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -72,7 +68,7 @@ const HomeProducer = () => {
           <img src={assets.about} alt="about" />
         </div>
         <div className="about-content">
-          <h3>-ORGANIC STORE-</h3>
+          <h3>ORGANIC STORE</h3>
           <h2>About us</h2>
           <p>
             We're committed to shrinking food miles by linking consumers and
