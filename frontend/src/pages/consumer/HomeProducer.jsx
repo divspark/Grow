@@ -16,7 +16,7 @@ import {
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
-import AutomatedSlider from "../../components/user/AutomatedSlider ";
+import AutomatedSlider from "../../components/user/AutomatedSlider";
 import { Link } from "react-router-dom";
 import useStore from "../../store/useStore";
 import { Loader } from "@mantine/core"; // Importing the Loader component
@@ -26,6 +26,7 @@ const HomeProducer = () => {
   const [products, setProducts] = useState([]);
   const [testimonials, setTestimonials] = useState([]); // State for testimonials
   const [loadingTestimonials, setLoadingTestimonials] = useState(true); // Track loading state for testimonials
+  const [loadingProducts, setLoadingProducts] = useState(true);
 
   axios.defaults.withCredentials = true;
 
@@ -35,9 +36,11 @@ const HomeProducer = () => {
       .get("https://grow-backend-pi.vercel.app/product/latest")
       .then((response) => {
         setProducts(response.data);
+        setLoadingProducts(false);
       })
       .catch((error) => {
         console.error("There was an error fetching the products!", error);
+        setLoadingProducts(false);
       });
   }, []);
 
@@ -87,7 +90,11 @@ const HomeProducer = () => {
       <div className="bestseller-page">
         <h1>Recently Added Items</h1>
         <div className="products-grid">
-          {products && products.length > 0 ? (
+          {loadingProducts ? (
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "200px" }}>
+              <Loader variant="bars" size="lg" />
+            </div>
+          ) :products && products.length > 0 ? (
             products.map((product) => (
               <ProductCard
                 key={product._id}
@@ -113,7 +120,9 @@ const HomeProducer = () => {
         
         {/* Show Loader if testimonials are still being fetched */}
         {loadingTestimonials ? (
-          <Loader variant="bars" size="lg" />
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "200px" }}>
+            <Loader variant="bars" size="lg" />
+          </div>
         ) : (
           <Carousel
             showArrows={true}
