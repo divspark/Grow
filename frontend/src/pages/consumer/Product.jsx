@@ -28,7 +28,7 @@ const Product = () => {
         <h1>Top Items Near You</h1>
         <div className="products-grid">
           {loading ? ( // Show Loader while loading
-            <Center>
+            <Center style={{ minHeight: '200px' }}>
               <Loader size="lg" />
             </Center>
           ) : products && products.length > 0 ? ( // Show products if available
