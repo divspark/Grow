@@ -100,3 +100,5 @@ We welcome contributions to the Grow platform! If you would like to contribute, 
    git push origin feature/your-feature-name
    ```
 5. **Submit a pull request**.
+
+6.**your Pr will be merge**.
