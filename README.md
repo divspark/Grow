@@ -101,4 +101,4 @@ We welcome contributions to the Grow platform! If you would like to contribute, 
    ```
 5. **Submit a pull request**.
 
-6.**your Pr will be merge**.
+6.**your Pr will be merge**
